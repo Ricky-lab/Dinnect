@@ -8,8 +8,11 @@
 ## Techs and Framework:
 - Ruby 3.0.6
 - Installed Gem package:
-  1. Byebug: `gem install byebug` <br>
-     Use to set up the breakpoint int the code and debug. 
+  1. Byebug: Use to set up the breakpoint int the code and debug.  <br>
+   ```
+    gem install byebug
+   ```
+     
    
 - Ruby on Rails 7.1.1
   ```
