@@ -7,7 +7,11 @@
 
 ## Techs and Framework:
 - Ruby 3.0.6
-- Gem install
+- Installed Gem package:
+  1. Byebug:
+     `gem install byebug`
+     Use to set up the breakpoint int the code and debug. 
+   
 - Ruby on Rails 7.1.1
   ```
   sudo gem install rails -v 7.1.1
