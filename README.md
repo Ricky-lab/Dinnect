@@ -6,7 +6,7 @@
 - Jianghao Wu
 
 ## Techs and Framework:
-- Ruby 3.0.6
+- Ruby `2.6.8`
 - Installed Gem package:
   1. Byebug: Use to set up the breakpoint int the code and debug.  <br>
    ```
@@ -16,10 +16,10 @@
    
 - Ruby on Rails 7.1.1
   ```
-  sudo gem install rails -v 7.1.1
+  sudo gem install rails -v 4.2.10
   ```
   then restart the terminal and input
-  `rails -v` if saying `7.1.1`, you are good to go.
+  `rails -v` if saying `4.2.10`, you are good to go.
 
 
 ## Current sprint:
