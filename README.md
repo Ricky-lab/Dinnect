@@ -1,4 +1,21 @@
-# COMPS-W4152-Fall2023
+# Project: Dinnect 
+## Group members:
+- Yuehui Ruan
+- Ruoxing Liao
+- Yifei Luo
+- Jianghao Wu
+
+## Techs and Framework:
+- Ruby 3.0.6
+- Gem install
+- Ruby on Rails 7.1.1
+  ```
+  sudo gem install rails -v 7.1.1
+  ```
+  then restart the terminal and input
+  `rails -v` if saying `7.1.1`, you are good to go.
+
+
 
 ### Sprint 1: Oct 27, 2023
 #### Front:
