@@ -14,7 +14,7 @@
    ```
      
    
-- Ruby on Rails 7.1.1
+- Ruby on Rails `4.2.10`
   ```
   sudo gem install rails -v 4.2.10
   ```
