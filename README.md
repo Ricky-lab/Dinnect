@@ -16,7 +16,7 @@
   `rails -v` if saying `7.1.1`, you are good to go.
 
 
-
+## Current sprint:
 ### Sprint 1: Oct 27, 2023
 #### Front:
 1. Login UI interface
