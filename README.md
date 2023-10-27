@@ -8,9 +8,9 @@
 
 ## Techs and Framework
 !! IMPORTANT: make sure your configuations in `gemfile` are correct before developing the project:
-- Ruby `3.0.6`
-- Installed Gem package:
-  1.PostgreSQL: database used in this project
+- Ruby `3.0.6` <br>
+- Installed Gem package:<br>
+  1.`PostgreSQL`: database used in this project
   ```
     brew install postgresql 
   ```
@@ -18,15 +18,15 @@
   ```
   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
   ```
-  where `/usr/local/bin/pg_config` is the result path that you run `which pg_config`.
+  where `/usr/local/bin/pg_config` is the result path that you run `which pg_config`.<br>
   
-  2. Byebug: Use to set up the breakpoint int the code and debug.  <br>
+  2. `Byebug`: Use to set up the breakpoint int the code and debug.  <br>
    ```
     gem install byebug
    ```
 
   
-   
+   <br>
 - Ruby on Rails `7.1.1`
   ```
   sudo gem install rails -v 7.1.1
