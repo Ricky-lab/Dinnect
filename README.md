@@ -35,14 +35,14 @@
 ## Current sprint:
 ### Sprint 1: Oct 27, 2023
 #### Front:
-1. Login UI interface
-2. Resigter interface
-3. Intergration with db
+1.  <del> Login UI interface </del>
+2. <del>Resigter interface</del>
+3. <del>Intergration with db</del>
 
 #### Back: 
-1. Populating db
-2. db deployment
-3. MVC testing
+1. <del>Populating db</del>
+2. <del>db deployment</del>
+3. <del>MVC testing</del>
 
 #### User story
 
