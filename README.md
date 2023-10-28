@@ -18,19 +18,19 @@
 <br>
 
 - Installed Gem package:<br>
-  1. `Byebug`: Use to set up the breakpoint int the code and debug.  <br>
-   ```
-    gem install byebug
-   ```
-
-  
+  None (all included in gemfile)
    <br>
 
 
 ## Set up:
 - Once you clone the project of your native env, double check the techs and framework version that you are using
 - run `bundle update` until you get the return without errors.
-<br>
+- Then you can set up to the local server to test, eg:
+
+  ```
+  rails server -p 4001
+  ```
+Then go to `localhost:4001`. 
 
 ## Current sprint:
 ### Sprint 1: Oct 27, 2023
