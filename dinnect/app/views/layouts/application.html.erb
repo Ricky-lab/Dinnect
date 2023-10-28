@@ -1,24 +1,44 @@
-<%# Our "base" layout should be a valid HTML document. %>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rotten Potatoes!</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <%= stylesheet_link_tag 'application', 'media' => 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <title>Dinnect</title>
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Add your stylesheet link here -->
+    <%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+    <!-- Add your JavaScript includes here -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%# These classes come from the Bootstrap CSS framework. %>
-    <nav class="navbar navbar-expand-lg bg-primary text-white mb-3">
-      <h1 class="title">Rotten Potatoes!</h1>
-    </nav>
-    <div class="container">
-      <%# Render "flash" messages in our application. This loads _flash.erb %>
-      <%= render 'layouts/flash' %>
-      <main id="main">
-        <%= yield %>
-      </main>
-    </div>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <span class="navbar-brand">Dinnect</span>
+          <ul class="navbar-nav">
+            <% if current_user %>
+              <li class="nav-item">
+                Welcome, <%= current_user.username %>!
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'Login Page', login_path, class: 'nav-link' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <%= yield %>
+    </main>
+
+    <!-- Add your footer content here if needed -->
   </body>
 </html>

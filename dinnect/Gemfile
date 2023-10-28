@@ -5,7 +5,8 @@ gem 'rails', '7.1.1'
 
 # Use PostgreSQL as your production database
 group :production do
-  # gem 'pg'
+  # we don't need pq, we are using sqlite3
+  # gem 'pg' 
 end
 
 # Use SQLite for development and test environments
@@ -32,3 +33,8 @@ gem 'uglifier', '>= 2.7.1'
 gem 'jquery-rails'
 
 gem 'activerecord'
+
+# implementing user authentication and registration in Ruby on Rails application
+# gem 'devise', '>= 4.9.3'  # Replace with the compatible version
+
+gem 'bcrypt' 

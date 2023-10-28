@@ -1,0 +1,14 @@
+<!-- views/sessions/new.html.erb (User Login Form) -->
+<h1>Log In</h1>
+
+<%= form_for :session, url: login_path do |f| %>
+  <%= f.label :username_or_email %>
+  <%= f.text_field :username_or_email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit 'Log In' %>
+  <%= link_to "Sign Up", signup_path %>
+
+<% end %>
