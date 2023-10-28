@@ -298,6 +298,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
   byebug
   capybara (~> 3.36)
   cucumber-rails
