@@ -16,6 +16,7 @@
   then restart the terminal and input
   `rails -v` if saying `7.1.1`, you are good to go.
 <br>
+
 - Installed Gem package:<br>
   1. `Byebug`: Use to set up the breakpoint int the code and debug.  <br>
    ```
