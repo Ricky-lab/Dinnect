@@ -1,5 +1,6 @@
 Rottenpotatoes::Application.routes.draw do
-  resources :users, except: :index
+  resources :users, only: [:new, :create, :show]
+
   # Custom user routes
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
