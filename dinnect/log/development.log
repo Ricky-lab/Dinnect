@@ -2661,3 +2661,60 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5746)
 
 
+Started GET "/" for ::1 at 2023-10-29 03:35:42 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2654)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 156.2ms | Allocations: 310663)
+Completed 200 OK in 164ms (Views: 125.8ms | ActiveRecord: 33.2ms | Allocations: 316548)
+
+
+Started GET "/signup" for ::1 at 2023-10-29 03:35:48 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1674)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 6732)
+Completed 200 OK in 19ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 14331)
+
+
+Started POST "/login" for ::1 at 2023-10-29 03:36:03 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"z0EcKZcrjL328M5P1b31JE8A_rArfCVvLbQCSJfu_5_5DqajTi-y3gLJ0R6Cyoyw9Ob_0LjvHgsiQCzFpDNVLw", "session"=>{"username_or_email"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://localhost:4001/users/4
+Completed 302 Found in 267ms (ActiveRecord: 0.2ms | Allocations: 1227)
+
+
+Started GET "/users/4" for ::1 at 2023-10-29 03:36:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 134)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 5290)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 5979)
+
+
+Started DELETE "/logout" for ::1 at 2023-10-29 03:36:08 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CEdIzq3m2wt3lAACLYdeKVB6QLS6k0g0d9ybotuxyfw-CPJEdOLlaIOtH1N68Ce965xB1CkAc1B4KLUv6GxjTA"}
+Redirected to http://localhost:4001/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 422)
+
+
+Started GET "/" for ::1 at 2023-10-29 03:36:08 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 650)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5457)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 5731)
+
+
