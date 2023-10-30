@@ -7,9 +7,9 @@ Feature: Dinnect - Connecting Columbia's Culinary and Social Journey
 Background: Users on Dinnect platform
 
   Given the following users exist:
-    | email             | uni    | dietary_preferences | 
-    | alice@columbia.edu| al1234 | Vegetarian          | 
-    | bob@columbia.edu  | bo1234 | Gluten-Free         | 
+    | email             | username    | password     | 
+    | alice@columbia.edu| al1234      | Vegetarian          | 
+    | bob@columbia.edu  | bo1234      | Gluten-Free         | 
 
 Scenario: Register on Dinnect
   When I go to the Registration page

@@ -1,6 +1,23 @@
 {
   "Cucumber Features": {
     "coverage": {
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
         "lines": [
           0,
@@ -128,29 +145,8 @@
         ],
         "branches": {
         }
-      },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
-        "lines": [
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1698633968
+    "timestamp": 1698636287
   }
 }

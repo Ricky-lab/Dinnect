@@ -2851,3 +2851,93 @@ Completed 200 OK in 135ms (Views: 123.9ms | ActiveRecord: 2.8ms | Allocations: 3
   [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@example.com"], ["LIMIT", 1]]
   [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest") VALUES (?, ?, ?) RETURNING "id"[0m  [["username", "user2"], ["email", "user2@example.com"], ["password_digest", "[FILTERED]"]]
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-30 03:09:37.433823', '2023-10-30 03:09:37.433826') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-10-29 23:16:13 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2631)
+  Rendered layout layouts/application.html.erb (Duration: 127.2ms | Allocations: 308020)
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 2.9ms | Allocations: 313810)
+
+
+  
+ActionView::Template::Error (Could not find table 'users'):
+    18:         <div class="container">
+    19:           <span class="navbar-brand">Dinnect</span>
+    20:           <ul class="navbar-nav">
+    21:             <% if current_user %>
+    22:               <li class="nav-item">
+    23:                 Welcome, <%= current_user.username %>!
+    24:               </li>
+  
+app/helpers/sessions_helper.rb:10:in `current_user'
+app/views/layouts/application.html.erb:21
+Started GET "/" for 127.0.0.1 at 2023-10-29 23:17:32 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2631)
+  Rendered layout layouts/application.html.erb (Duration: 113.5ms | Allocations: 308020)
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 2.7ms | Allocations: 313810)
+
+
+  
+ActionView::Template::Error (Could not find table 'users'):
+    18:         <div class="container">
+    19:           <span class="navbar-brand">Dinnect</span>
+    20:           <ul class="navbar-nav">
+    21:             <% if current_user %>
+    22:               <li class="nav-item">
+    23:                 Welcome, <%= current_user.username %>!
+    24:               </li>
+  
+app/helpers/sessions_helper.rb:10:in `current_user'
+app/views/layouts/application.html.erb:21
+Started GET "/" for 127.0.0.1 at 2023-10-29 23:20:01 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2631)
+  Rendered layout layouts/application.html.erb (Duration: 135.3ms | Allocations: 308020)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 2.6ms | Allocations: 313810)
+
+
+  
+ActionView::Template::Error (Could not find table 'users'):
+    18:         <div class="container">
+    19:           <span class="navbar-brand">Dinnect</span>
+    20:           <ul class="navbar-nav">
+    21:             <% if current_user %>
+    22:               <li class="nav-item">
+    23:                 Welcome, <%= current_user.username %>!
+    24:               </li>
+  
+app/helpers/sessions_helper.rb:10:in `current_user'
+app/views/layouts/application.html.erb:21
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-30 03:23:10.652671', '2023-10-30 03:23:10.652673') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20231030032148)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231030032148') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-10-29 23:23:23 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2631)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 122.7ms | Allocations: 310395)
+Completed 200 OK in 130ms (Views: 111.4ms | ActiveRecord: 13.5ms | Allocations: 316225)
+
+
