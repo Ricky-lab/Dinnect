@@ -13,50 +13,126 @@ Background: Users on Dinnect platform
 
 Scenario: Register on Dinnect
   When I go to the Registration page
-  And I fill in the following:
-    | Field             | Value              |
-    | Email             | charlie@columbia.edu|
-    | UNI               | ch1234             |
-    | Password          | securepassword     |
-    | Confirm Password  | securepassword     |
-  And I press "Register"
-  Then I should see "Welcome, Charlie! Your registration is successful."
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Then I should be on the Log in page
 
-Scenario: Login to Dinnect
-  Given I am on the Login page
-  When I fill in "Email" with "alice@columbia.edu"
-  And I fill in "Password" with "password1"
-  And I press "Login"
-  Then I should see "Welcome back, Alice!"
+Scenario: Register on Dinnect with an invalid email
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Then I should be on the Registration page
 
-Scenario: Create and Edit Profile
-  Given I am logged in as "alice@columbia.edu"
-  When I go to the Edit Profile page
-  And I fill in "Dietary Preferences" with "Vegan, Nut-Free"
-  And I press "Save Changes"
-  Then my dietary preferences should be "Vegan, Nut-Free"
+Scenario: Register on Dinnect with a repeated email
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Given I am on the Log in page
+  When I go to the Registration page
+  And I fill in "Username" with "duke"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromduke"
+  And I press "Sign Up"
+  Then I should be on the Registration page
 
-Scenario: Create Dining Event
-  Given I am logged in as "alice@columbia.edu"
-  When I go to the Create Dining Event page
-  And I fill in the following:
-    | Field       | Value       |
-    | Title       | Lunch Event |
-    | Location    | Butler Library |
-    | Date        | 2023-10-25  |
-    | Time        | 12:30 PM    |
-  And I press "Create Event"
-  Then I should see "Your dining event 'Lunch Event' has been created."
+Scenario: Register on Dinnect with a repeated username
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Given I am on the Log in page
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "columbia@columbia.edu"
+  And I fill in "Password" with "igraduatedfromduke"
+  And I press "Sign Up"
+  Then I should be on the Registration page
 
-Scenario: Join Dining Event
-  Given I am logged in as "bob@columbia.edu"
-  When I go to the Events page
-  And I follow "Join" for "Lunch Event"
-  Then I should see "You have joined 'Lunch Event'."
+Scenario: Login to Dinnect with username and then logout
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Given I am on the Log in page
+  And I fill in "Username or email" with "uncch"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Log In"
+  Then I should be on the User page for "uncch"
+  Then I should see "Welcome, uncch!"
+  And I follow "Logout"
+  Then I should be logged out
+  Then I go to the Home page
+  
 
-Scenario: Search and Match with Dining Companions
-  Given I am logged in as "alice@columbia.edu"
-  When I go to the Search page
-  And I select "Gluten-Free" in dietary preferences
-  And I press "Search"
-  Then I should see "bob@columbia.edu"
+Scenario: Login to Dinnect with email
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Given I am on the Log in page
+  And I fill in "Username or email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Log In"
+  Then I should be on the User page for "uncch"
+  Then I should see "Welcome, uncch!"
+
+
+Scenario: Login to Dinnect with wrong pwd 
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Given I am on the Log in page
+  And I fill in "Username or email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromduke"
+  And I press "Log In"
+  Then I should be on the Log in page
+  And I fill in "Username or email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Log In"
+  Then I should be on the User page for "uncch"
+  Then I should see "Welcome, uncch!"
+
+Scenario: Login to Dinnect with wrong email 
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Given I am on the Log in page
+  And I fill in "Username or email" with "uncch@duke.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Log In"
+  Then I should be on the Log in page
+  And I fill in "Username or email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Log In"
+  Then I should be on the User page for "uncch"
+  Then I should see "Welcome, uncch!"
+
+Scenario: Login to Dinnect with wrong email 
+  When I go to the Registration page
+  And I fill in "Username" with "uncch"
+  And I fill in "Email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Sign Up"
+  Given I am on the Log in page
+  And I fill in "Username or email" with "duke"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Log In"
+  Then I should be on the Log in page
+  And I fill in "Username or email" with "uncch@unc.edu"
+  And I fill in "Password" with "igraduatedfromuncch23"
+  And I press "Log In"
+  Then I should be on the User page for "uncch"
+  Then I should see "Welcome, uncch!"

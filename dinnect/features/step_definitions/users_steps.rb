@@ -11,6 +11,16 @@ Given /the following users exist/ do |users_table|
     end
   end
   
+  Then("I should be logged out") do
+    # You can test if the user is not logged in by checking elements visible to logged-in users.
+    # For example, check if the 'Log Out' link/button is not present on the homepage.
+    expect(page).to_not have_content("logout")
+  end
+
+  Then /I should see the error message "(.*)"/ do |e1|
+    expect(page).to have_content(e1)#'Invalid Email Address or Username!'
+  end
+
   Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
     #  ensure that that e1 occurs before e2.
     #  page.body is the entire content of the page as a string.

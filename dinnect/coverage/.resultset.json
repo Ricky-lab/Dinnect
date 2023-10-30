@@ -5,6 +5,7 @@
         "lines": [
           1,
           1,
+          null,
           1,
           1,
           null
@@ -18,135 +19,123 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
+          1,
+          1,
+          11,
           null,
           null,
-          0,
+          1,
+          11,
+          11,
+          null,
+          8,
+          null,
+          3,
           null,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          11,
+          null,
+          null
+        ]
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
       },
       "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/application_helper.rb": {
         "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          null
+        ]
       },
       "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
-          0,
+          1,
           null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
+          1,
           0,
           null,
           null,
+          1,
+          44,
+          null,
+          null,
+          null,
+          1,
           0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null,
+          null
+        ]
       },
       "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null,
+          8,
+          5,
+          5,
+          null,
+          3,
+          3,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          1,
           0,
-          0
-        ],
-        "branches": {
-        }
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1698636287
+    "timestamp": 1698643536
   }
 }
