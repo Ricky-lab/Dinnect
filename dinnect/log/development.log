@@ -1222,3 +1222,23 @@ Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb
 Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2023-10-27 19:16:39 -0400
 Started GET "/assets/jquery_ujs.self-a6375ab2b275439c922ac52b02a475d288976458aa11a6e8103c925ef2961f66.js?body=1" for ::1 at 2023-10-27 19:16:39 -0400
 Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2023-10-27 19:16:39 -0400
+Started GET "/" for 127.0.0.1 at 2023-10-28 01:43:18 -0400
+Redirected to http://localhost:4001/movies
+Completed 301 Moved Permanently in 16ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-28 01:43:18 -0400
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (Duration: 55.1ms | Allocations: 14476)
+  Rendered layouts/_flash.erb (Duration: 0.8ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 1978.1ms | Allocations: 312813)
+Completed 200 OK in 2098ms (Views: 1971.6ms | ActiveRecord: 15.7ms | Allocations: 335810)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2023-10-28 01:43:21 -0400
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2023-10-28 01:43:21 -0400
+Started GET "/assets/jquery_ujs.self-a6375ab2b275439c922ac52b02a475d288976458aa11a6e8103c925ef2961f66.js?body=1" for 127.0.0.1 at 2023-10-28 01:43:21 -0400
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2023-10-28 01:43:21 -0400
