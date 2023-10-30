@@ -22,11 +22,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_28_062218) do
   # end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string :username, null: false
+    t.string :email, null: false
+    t.string :password_digest, null: false
+    add_index :users, :email, unique: true
+    #t.datetime "created_at", null: false
+    #t.datetime "updated_at", null: false
   end
 
 end
