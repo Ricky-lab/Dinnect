@@ -1,46 +1,62 @@
-Feature: search for movies by director
+Feature: Dinnect - Connecting Columbia's Culinary and Social Journey
 
-  As a movie buff
-  So that I can find movies with my favorite director
-  I want to include and search on director information in movies I enter
+  As a Columbia University student
+  So that I can find suitable dining companions and engage in campus activities
+  I want to use the Dinnect platform to connect with like-minded peers
 
-Background: movies in database
+Background: Users on Dinnect platform
 
-  Given the following movies exist:
-  | title        | rating | director     | release_date |
-  | Star Wars    | PG     | George Lucas |   1977-05-25 |
-  | Blade Runner | PG     | Ridley Scott |   1982-06-25 |
-  | Alien        | R      |              |   1979-05-25 |
-  | THX-1138     | R      | George Lucas |   1971-03-11 |
+  Given the following users exist:
+    | email             | uni    | dietary_preferences | 
+    | alice@columbia.edu| al1234 | Vegetarian          | 
+    | bob@columbia.edu  | bo1234 | Gluten-Free         | 
 
-Scenario: add director to existing movie
-  When I go to the edit page for "Alien"
-  And  I fill in "Director" with "Ridley Scott"
-  And  I press "Update Movie Info"
-  Then the director of "Alien" should be "Ridley Scott"
+Scenario: Register on Dinnect
+  When I go to the Registration page
+  And I fill in the following:
+    | Field             | Value              |
+    | Email             | charlie@columbia.edu|
+    | UNI               | ch1234             |
+    | Password          | securepassword     |
+    | Confirm Password  | securepassword     |
+  And I press "Register"
+  Then I should see "Welcome, Charlie! Your registration is successful."
 
-Scenario: find movie with same director
-  Given I am on the details page for "Star Wars"
-  When  I follow "Find Movies With Same Director"
-  Then  I should be on the Similar Movies page for "Star Wars"
-  And   I should see "THX-1138"
-  But   I should not see "Blade Runner"
+Scenario: Login to Dinnect
+  Given I am on the Login page
+  When I fill in "Email" with "alice@columbia.edu"
+  And I fill in "Password" with "password1"
+  And I press "Login"
+  Then I should see "Welcome back, Alice!"
 
-Scenario: can't find similar movies if we don't know director (sad path)
-  Given I am on the details page for "Alien"
-  Then  I should not see "Ridley Scott"
-  When  I follow "Find Movies With Same Director"
-  Then  I should be on the home page
-  And   I should see "'Alien' has no director info"
+Scenario: Create and Edit Profile
+  Given I am logged in as "alice@columbia.edu"
+  When I go to the Edit Profile page
+  And I fill in "Dietary Preferences" with "Vegan, Nut-Free"
+  And I press "Save Changes"
+  Then my dietary preferences should be "Vegan, Nut-Free"
 
-Scenario: create movie with director
-  When I go to the new page
-  And  I fill in "Title" with "Potatoes"
-  And  I fill in "Director" with "Ridley Scott"
-  And  I press "Save Changes"
-  Then the director of "Potatoes" should be "Ridley Scott"
+Scenario: Create Dining Event
+  Given I am logged in as "alice@columbia.edu"
+  When I go to the Create Dining Event page
+  And I fill in the following:
+    | Field       | Value       |
+    | Title       | Lunch Event |
+    | Location    | Butler Library |
+    | Date        | 2023-10-25  |
+    | Time        | 12:30 PM    |
+  And I press "Create Event"
+  Then I should see "Your dining event 'Lunch Event' has been created."
 
-Scenario: destroy movie
-  Given I am on the details page for "Alien"
-  And   I follow "Delete"
-  Then  I should be on the home page
+Scenario: Join Dining Event
+  Given I am logged in as "bob@columbia.edu"
+  When I go to the Events page
+  And I follow "Join" for "Lunch Event"
+  Then I should see "You have joined 'Lunch Event'."
+
+Scenario: Search and Match with Dining Companions
+  Given I am logged in as "alice@columbia.edu"
+  When I go to the Search page
+  And I select "Gluten-Free" in dietary preferences
+  And I press "Search"
+  Then I should see "bob@columbia.edu"

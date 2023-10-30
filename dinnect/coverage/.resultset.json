@@ -1,0 +1,156 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/sessions_helper.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
+        "lines": [
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1698632927
+  }
+}

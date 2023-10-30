@@ -298,6 +298,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actioncable (= 7.1.1)
   activerecord
   bcrypt
   byebug
