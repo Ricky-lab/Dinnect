@@ -24,14 +24,20 @@
 
 ## Set up:
 - Once you clone the project of your native env, double check the techs and framework version that you are using
-- Make sure you have your `bundle` update to the latest version. Using: `gem update bundler` 
+- Make sure you have your `bundle` update to the latest version. Using: `gem update bundler`
 - run `bundle update` until you get the return without errors.
 - Then you can set up to the local server to test, eg:
-
   ```
   rails server -p 4001
   ```
-Then go to `localhost:4001`. 
+  Then go to `localhost:4001`. 
+
+## Testing: Cucumber
+- Before you use `Cucumber` to do the unit test, do `migrate` on the test db in command line:
+  ```
+  RAILS_ENV=test rails db:migrate
+  ```
+
 
 ## Current sprint:
 ### Sprint 1: Oct 27, 2023
