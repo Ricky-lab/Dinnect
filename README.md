@@ -4,8 +4,8 @@
 
 Welcome to **Dinnect**, the ultimate solution to one of the most prevalent challenges faced by students at Columbia University. Finding suitable dining companions and fostering social connections has never been easier. Our platform was designed to tackle the pain points that Columbia students encounter daily, offering a comprehensive solution that extends beyond dining and creates a vibrant, inclusive, and secure campus community.
 
-## Link for developer [doucmentation](https://github.com/Ricky-lab/COMPS-W4152-Fall2023/tree/main/dinnect#project-dinnect):
-If you are a developer and you are looking for the documentation of this project setting up, please follow this [doucmentation](https://github.com/Ricky-lab/COMPS-W4152-Fall2023/tree/main/dinnect#project-dinnect). <br>
+## Link for developer [doucmentation](documentation.md):
+If you are a developer and you are looking for the documentation of this project setting up, please follow this [doucmentation](documentation.md). <br>
 
 <br>
 
