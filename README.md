@@ -49,8 +49,3 @@ Then go to `localhost:4001`.
 
 #### Test unit setting
 - Cucumber & RSpec
-
-also do migrate on the test db
-```
-RAILS_ENV=test rails db:migrate
-```
