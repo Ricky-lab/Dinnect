@@ -6,7 +6,8 @@ gem 'rails', '7.1.1'
 # Use PostgreSQL as your production database
 group :production do
   # we don't need pq, we are using sqlite3
-  # gem 'pg' 
+  # gem 'pg'
+  gem 'sqlite3', '~> 1.4'
 end
 
 # Use SQLite for development and test environments
