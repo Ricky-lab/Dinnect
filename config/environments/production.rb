@@ -15,7 +15,7 @@ Dinnect::Application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
-  config.assets.js_compressor = :uglifier
+  #config.assets.js_compressor = :uglifier
 
   # DO fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
@@ -23,7 +23,10 @@ Dinnect::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.assets.js_compressor = Uglifier.new(harmony: true)
+  config.assets.configure do |env|
+    env.js_compressor  = :uglifier # or :closure, :yui
+    env.css_compressor = :sass   # or :yui
+  end
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
