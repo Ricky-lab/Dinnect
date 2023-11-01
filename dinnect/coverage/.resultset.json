@@ -157,7 +157,7 @@
           null,
           null,
           1,
-          4,
+          18,
           null,
           null,
           null,
@@ -173,6 +173,24 @@
           null
         ]
       },
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
@@ -183,22 +201,22 @@
           null,
           null,
           1,
-          0,
+          4,
           null,
           null,
-          0,
+          4,
           0,
           0,
           null,
-          0,
-          0,
+          4,
+          4,
           null,
           null,
           null,
           1,
           null,
-          0,
-          0,
+          4,
+          4,
           null,
           null,
           1,
@@ -225,58 +243,38 @@
           null
         ]
       },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
-        "lines": [
-          null,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
+          1,
+          1,
+          2,
           null,
           null,
-          0,
+          1,
+          6,
+          6,
+          null,
+          3,
+          null,
+          3,
           null,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1698817830
+    "timestamp": 1698820782
   }
 }
