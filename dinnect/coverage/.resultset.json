@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -11,7 +11,7 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
         "lines": [
           null,
           1,
@@ -19,7 +19,7 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -50,7 +50,7 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -59,13 +59,13 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/application_helper.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/sessions_helper.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -86,13 +86,13 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -136,17 +136,17 @@
         ]
       }
     },
-    "timestamp": 1698643536
+    "timestamp": 1698808866
   },
   "RSpec": {
     "coverage": {
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/application_helper.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/sessions_helper.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -167,65 +167,13 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -235,7 +183,7 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
         "lines": [
           null,
           1,
@@ -243,7 +191,63 @@
           null
         ]
       },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
         "lines": [
           0,
           0,
@@ -277,6 +281,6 @@
         }
       }
     },
-    "timestamp": 1698795473
+    "timestamp": 1698816716
   }
 }
