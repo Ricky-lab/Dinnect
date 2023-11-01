@@ -109,6 +109,7 @@
           5,
           5,
           null,
+          null,
           3,
           3,
           null,
@@ -136,7 +137,7 @@
         ]
       }
     },
-    "timestamp": 1698643536
+    "timestamp": 1698860714
   },
   "RSpec": {
     "coverage": {
@@ -157,7 +158,7 @@
           null,
           null,
           1,
-          4,
+          22,
           null,
           null,
           null,
@@ -169,58 +170,6 @@
       },
       "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
         "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          null,
           1,
           null
         ]
@@ -243,40 +192,91 @@
           null
         ]
       },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null,
+          8,
+          4,
+          4,
+          null,
+          null,
+          4,
+          4,
+          null,
+          null,
+          null,
+          1,
+          null,
+          4,
+          4,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
       "/home/wjh0706/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
+          1,
+          1,
+          2,
           null,
           null,
-          0,
+          1,
+          6,
+          6,
+          null,
+          3,
+          null,
+          3,
           null,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1698795473
+    "timestamp": 1698860723
   }
 }
