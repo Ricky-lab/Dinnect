@@ -173,6 +173,58 @@
           null
         ]
       },
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
       "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
         "lines": [
           1,
@@ -190,62 +242,6 @@
           1,
           null
         ]
-      },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       },
       "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
         "lines": [
@@ -281,6 +277,6 @@
         }
       }
     },
-    "timestamp": 1698816716
+    "timestamp": 1698817830
   }
 }
