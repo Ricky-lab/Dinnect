@@ -140,13 +140,13 @@
   },
   "RSpec": {
     "coverage": {
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/application_helper.rb": {
+      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/dinnect/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/sessions_helper.rb": {
+      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/dinnect/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -157,7 +157,7 @@
           null,
           null,
           1,
-          18,
+          22,
           null,
           null,
           null,
@@ -167,31 +167,31 @@
           null
         ]
       },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
+      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/dinnect/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
+      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/dinnect/app/models/user.rb": {
         "lines": [
           1,
           1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
-        "lines": [
           null,
           1,
           1,
           null
         ]
       },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
+      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/dinnect/app/models/application_record.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/dinnect/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -201,12 +201,13 @@
           null,
           null,
           1,
-          4,
+          8,
           null,
           null,
+          8,
           4,
-          0,
-          0,
+          4,
+          null,
           null,
           4,
           4,
@@ -223,7 +224,7 @@
           null,
           null,
           1,
-          0,
+          4,
           null,
           null,
           null,
@@ -234,7 +235,7 @@
           null
         ]
       },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
+      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/dinnect/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -243,7 +244,7 @@
           null
         ]
       },
-      "/Users/liaoruoxing/Documents/GitHub/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
+      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/dinnect/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -261,7 +262,7 @@
           null,
           null,
           1,
-          2,
+          4,
           null,
           null,
           null,
@@ -275,6 +276,6 @@
         ]
       }
     },
-    "timestamp": 1698820782
+    "timestamp": 1698825241
   }
 }

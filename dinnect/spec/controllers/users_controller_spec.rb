@@ -21,10 +21,16 @@ RSpec.describe "Users", type: :request do
         }.to change(User, :count).by(1)
       end
 
+      it 'valid register, database size + 1' do
+        current_size = User.count
+        user = User.create(username: 'test3', email: 'test3@email.com', password: 'password') # Create a user with valid credentials for the test
+        expect(User.count).to eq(current_size + 1)
+      end
+
       it 'redirects to the login path with a notice' do
         post signup_path, params: { user: valid_attributes }
         expect(response).to redirect_to(login_path)
-        follow_redirect!
+        follow_redirect! #check the redirections
         expect(flash[:notice]).to eq('Registration successful!')
       end
     end
@@ -34,6 +40,12 @@ RSpec.describe "Users", type: :request do
         expect {
           post signup_path, params: { user: invalid_attributes }
         }.to change(User, :count).by(0)
+      end
+
+      it 'register with duplicate username result in unsuccessfully register' do
+        current_size = User.count
+        user = User.create(username: 'test2', email: 'test2@email.com', password: 'password') # Create a user with valid credentials for the test
+        expect(User.count).to eq(current_size)
       end
 
       it 're-renders the signup template' do
