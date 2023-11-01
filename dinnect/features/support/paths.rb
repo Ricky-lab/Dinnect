@@ -12,15 +12,11 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-    #when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
     when /^the Registration page$/ then signup_path()
     when /^the Home page$/ then '/'
     when /^the Log in page$/ then login_path
     when /^the Log Out page$/ then logout_path    
     when /^the User page for "(.+)"$/ then user_path(User.find_by(username: $1)||User.find_by(email: $1)) #'/users/'+(User.find_by(username: $1).id)
-    #when /^the edit page for "(.*)"$/ then edit_movie_path(Movie.find_by_title($1))
-    #when /^the new page$/ then new_movie_path
-    #when /^the Similar Movies page for "(.+)"/ then search_directors_path($1)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
