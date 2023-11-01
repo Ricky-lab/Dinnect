@@ -8,7 +8,7 @@ group :production do
   # we don't need pq, we are using sqlite3
   # gem 'pg'
   gem 'sqlite3', '~> 1.4'
-  gem 'pg', '~> 0.21' # for Heroku deployment
+  gem 'pg', '~> 1.1' # for Heroku deployment
   gem 'rails_12factor'
 end
 
