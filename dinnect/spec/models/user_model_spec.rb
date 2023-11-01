@@ -11,4 +11,11 @@ RSpec.describe User, type: :model do
     user = User.new(username: 'testuser', email: 'test@example.com', password: nil)
     expect(user).not_to be_valid
   end
+
+  it 'is invalid with invalid email' do
+    user = User.new(username: 'testuser', email: 'test', password: 'password')
+    expect(user).not_to be_valid
+  end
 end
+
+
