@@ -1,49 +1,110 @@
-# Dinnect: Connecting Columbia University Students through Dining and Beyond
-
-## Introduction
-
-Welcome to **Dinnect**, the ultimate solution to one of the most prevalent challenges faced by students at Columbia University. Finding suitable dining companions and fostering social connections has never been easier. Our platform was designed to tackle the pain points that Columbia students encounter daily, offering a comprehensive solution that extends beyond dining and creates a vibrant, inclusive, and secure campus community.
-
-##  [Doucmentation](DEVELOPER.md) link for developer:
-If you are a developer and you are looking for the documentation of this project setting up, please follow this [doucmentation](DEVELOPER.md). <br>
-
+# Project: Dinnect 
+## Group members:
+- Yuehui Ruan
+- Ruoxing Liao
+- Yifei Luo
+- Jianghao Wu
 <br>
 
-### Pain Points We Are Addressing
+## Minimal Viable Prototype
 
-For students at Columbia University, finding suitable dining companions is necessary in daily life, as different students may have different dietary preferences and restrictions. However, there is a lack of a comprehensive platform that facilitates this and helps Columbia students connect with like-minded peers for meal planning and dining.
+The URL of Dinnect: https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/
 
-- ### Adapting to Columbia's Diverse Academic Landscape and Urban Setting
+## Techs and Framework
 
-**Columbia University**, known for its diverse student body and rigorous academic environment, faces a unique challenge due to the swift turnover of students. With a substantial number of students completing their programs within two years and a continuous influx of new students, it's imperative to provide a platform that efficiently caters to their diverse academic and social needs. The urban location in New York City amplifies the urgency for a comprehensive platform that extends beyond its initial dining focus. This enables students to swiftly connect with their peers, explore the city's offerings, and enrich their academic and social experiences. This shift aligns seamlessly with the university's commitment to enhancing campus life, promoting student well-being, and fostering a secure and inclusive environment.
+!! IMPORTANT: make sure your configuations in `gemfile` are correct before developing the project:
+- Ruby `3.0.6` <br>
+- Ruby on Rails `7.1.1`
+  ```
+  sudo gem install rails -v 7.1.1
+  ```
+  then restart the terminal and input
+  `rails -v` if saying `7.1.1`, you are good to go.
+  <br>
 
-- ### Fostering Vibrancy and Inclusivity Through Campus Activities
+- Installed Gem package:<br>
+  None (all included in gemfile)
+   <br>
 
-The rapid turnover of students at **Columbia University** underscores the need for expedited social connections and vibrant campus life. By pivoting towards organizing campus activities, the platform aims to accelerate these connections, fostering dynamic social networks within and beyond the campus. Its focus on offering students opportunities to engage in diverse activities, including club meetings and cultural events, caters to the fast-paced nature of student life. Notably, while ensuring security remains a priority, the platform's response to the swift student flow underscores the trust and camaraderie within the Columbia University community, making it an essential component of student life.
 
-- ### Ensuring Security in a Trusted Campus Community
+## Set up:
+- Once you clone the project of your native env, double check the techs and framework version that you are using
+- Make sure you have your `bundle` update to the latest version. Using: `gem update bundler` 
+- run `bundle update` until you get the return without errors
+- Then you can set up to the local server to test, eg:
 
-In light of the rapid student turnover and the associated need for quick connections, the platform can harness the inherent trust within the Columbia University community to enhance security and inclusivity. The expeditious nature of students' academic journeys calls for proactive security measures, including member verification and robust activity monitoring. These measures not only address security concerns but also contribute to the sense of trust and community that is vital in a fast-paced academic environment where connections need to be established swiftly.
+  ```
+  rails server -p 4001
+  ```
+Then go to `localhost:4001`. 
 
-## What Our SaaS Does to Address the Pain Points
+## Testing: Cucumber
 
-### Proposed Solution: Dinnect
+- Before you use `Cucumber` to do the unit test, do `migrate` on the test db in command line:
 
-- **Register and Login:** Allows registration and login only with @columbia.edu email addresses, ensuring the exclusivity and security of the platform.
+  ```bash
+  RAILS_ENV=test rails db:migrate
+  ```
 
-- **Profile Creation:** Students can create profiles using their UNI (University Network Identifier) to ensure a secure and exclusive community. Students can specify their dietary preferences and restrictions. This might include vegetarian, vegan, gluten-free, halal, kosher, allergies, or other specific dietary needs.
++ Use `Cucumber` to do `BDD` in command line:
 
-- **Matching and Searching:** Dinnect employs a proprietary matching algorithm that takes into account the user's dietary preferences and restrictions, time and location. This makes sure that users have common ground for meaningful conversations during meals.
+  ```bash
+  rake cucumber
+  ```
 
-- **Event Scheduling:** Users can create dining events based on their availability and location, simplifying the process of organizing meals with like-minded peers.
++ Pass cucumber with good coverage: 44 / 48 LOC (91.67%)
 
-## Why Our SaaS Is Unique/Different from the Solutions in the Market
++ Design
+  + Common registration and login processes 
+  + Exceptional cases, such as attempts to register with already existing emails or usernames and login attempts with incorrect credentials
 
-- **Exclusive Columbia Community:** Our platform is exclusively for Columbia University students, ensuring a trusted and familiar environment for networking.
+## Testing: RSpec
 
-- **Customized Dietary Matching:** Our platform goes beyond simple location-based connections. It takes into account students' dietary preferences and restrictions, enabling them to find dining companions who share common ground when it comes to food choices.
++ Use `RSpec` to do the `TDD` in command line:
 
-Dinnect is not just a dining platform; it's a gateway to a richer, more fulfilling campus experience at Columbia University. Join us in creating a stronger sense of community, fostering friendships, and simplifying the process of connecting with like-minded peers in the bustling heart of New York City.
+  ```bash
+  bundle exec rspec
+  ```
 
----
++ All files are in `'./spec'`
++ Design
+  + Align with the Model-View-Controller (MVC) pattern
+  + **Model Tests (`user_model_spec.rb`)**: These tests validate the core business logic encapsulated within the models. They ensure that a `User` is only considered valid when all necessary attributes are present and correctly formatted, particularly focusing on the username, email, and password. The negative cases also ensure that appropriate validations are triggered when invalid data is provided, reinforcing the integrity of user data within the system.
+  + **Controller Tests (`sessions_controller_spec.rb` and `users_controller_spec.rb`)**: Controller tests scrutinize the application's HTTP endpoints for both session handling (login and logout) and user management (signup and profile viewing). They carefully examine the behavior of the application when presented with both valid and invalid form submissions. The tests encompass scenarios of successful logins, correctly handling logouts, and ensuring proper user creation upon signup with validation feedback when incorrect data is submitted.
+  + **Request Tests (`sessions_spec.rb` and `users_spec.rb`)**: Request tests simulate real HTTP requests to the application, providing an end-to-end check that involves routing, controllers, models, and views. These tests emulate user interaction with the login and signup pages, ensuring that the application responds with the correct HTTP status codes and renders the expected pages upon these requests.
+  + **Helper Tests (`sessions_helper_spec.rb`)**: The tests for helpers validate utility functions that manage user sessions. They ensure that methods such as `log_in`, `current_user`, and `logged_in?` behave as expected, confirming that the login state is preserved across the application and that the current user is correctly identified throughout the session's lifecycle.
 
+## Deployment
+
++ We deploy our app in `Heroku` with the following commands:
+
+  ```bash
+  git pull
+  heroku login -i
+  git checkout master
+  heroku create
+  heroku stack:set heroku-20
+  heroku addons:create heroku-postgresql
+  git push heroku master
+  heroku run rake db:migrate
+  ```
+
+## Current sprint:
+
+### Sprint 1: Oct 27, 2023
+#### Front:
+1.  <del> Login UI interface </del>
+2. <del>Resigter interface</del>
+3. <del>Intergration with db</del>
+
+#### Back: 
+1. <del>Populating db</del>
+2. <del>db deployment</del>
+3. <del>MVC testing</del>
+
+#### User story
+
++ <del>Cucumber</del>
+
+#### Test unit setting
+- <del>RSpec</del>
