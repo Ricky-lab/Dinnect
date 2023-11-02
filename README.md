@@ -67,6 +67,7 @@ Then go to `localhost:4001`.
   ```
 
 + All files are in `'./spec'`
++ Pass cucumber with good coverage: 46 / 48 LOC (95.83%)
 + Design
   + Align with the Model-View-Controller (MVC) pattern
   + **Model Tests (`user_model_spec.rb`)**: These tests validate the core business logic encapsulated within the models. They ensure that a `User` is only considered valid when all necessary attributes are present and correctly formatted, particularly focusing on the username, email, and password. The negative cases also ensure that appropriate validations are triggered when invalid data is provided, reinforcing the integrity of user data within the system.
