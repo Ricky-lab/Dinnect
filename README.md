@@ -4,9 +4,14 @@
 - Ruoxing Liao
 - Yifei Luo
 - Jianghao Wu
+
+
+## User Stories: [Why Dinnect?](DINNECT_README.md)
+We analyze the needs and tell you why you should believe Dinnect can be a __go-to community__ software!
+
 <br>
 
-## Minimal Viable Prototype: [Dinnect](https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/)(Tier-1)
+## Minimal Viable Prototype: [Dinnect](https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/)(Iter-1)
 
 <br>
 
