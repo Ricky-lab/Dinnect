@@ -1,18 +1,23 @@
-# Project: Dinnect 
+# Project: [Dinnect ](https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/) 
 ## Group members:
 - Yuehui Ruan
 - Ruoxing Liao
 - Yifei Luo
 - Jianghao Wu
+
+
+## User Stories: [Why Dinnect?](DINNECT_README.md)
+We analyze the needs and tell you why you should believe Dinnect can be a __go-to community__ software!
+
 <br>
 
-## Minimal Viable Prototype
+## Minimal Viable Prototype: [Dinnect](https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/)(Iter-1)
 
-The URL of Dinnect: https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/
+<br>
 
 ## Techs and Framework
 
-!! IMPORTANT: make sure your configuations in `gemfile` are correct before developing the project:
+  !! IMPORTANT: make sure your configuations in `gemfile` are correct before developing the project:
 - Ruby `3.0.6` <br>
 - Ruby on Rails `7.1.1`
   ```
@@ -28,9 +33,9 @@ The URL of Dinnect: https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/
 
 
 ## Set up:
-- Once you clone the project of your native env, double check the techs and framework version that you are using
-- Make sure you have your `bundle` update to the latest version. Using: `gem update bundler` 
-- run `bundle update` until you get the return without errors
+- Once you clone the project of your local env, double check the techs and framework version that you are using
+- Make sure you have your `bundler` update to the latest version. Using: `gem update bundler` 
+- run  `bundle install` and `bundle update` until you get the return without errors
 - Then you can set up to the local server to test, eg:
 
   ```
