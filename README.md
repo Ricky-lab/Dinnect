@@ -114,3 +114,19 @@ Then go to `localhost:4001`.
 
 #### Test unit setting
 - <del>RSpec</del>
+
+
+### Sprint 2: Oct 27, 2023
+#### Front:
+
+#### Back: 
+1. Populating db
+2. db deployment
+3. MVC testing
+
+#### User story
+
++ Cucumber
+
+#### Test unit setting
+- RSpec
