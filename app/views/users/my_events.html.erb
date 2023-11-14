@@ -1,0 +1,14 @@
+<h1>My Events</h1>
+
+<%= link_to 'My Profile', user_path(current_user), class: 'btn btn-info profile-button' %>
+
+
+<% @user_events.each do |event| %>
+  <div class="event">
+    <h2><%= event.title %></h2>
+    <p><%= event.description %></p>
+    <!-- Display other event details as needed -->
+  </div>
+<% end %>
+
+<%= link_to 'All Events', events_path, class: 'btn btn-primary return-to-all-events' %>

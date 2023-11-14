@@ -17,6 +17,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  # to show all the related events
+  def my_events
+    @user_events = current_user.events
+  end
 
   private
 
