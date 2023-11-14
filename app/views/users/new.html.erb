@@ -1,15 +1,42 @@
 <!-- views/users/new.html.erb (User Registration Form) -->
-<h1>Sign Up</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'auth', media: 'all' %>
+</head>
+<body>
 
-<%= form_for @user, url: signup_path do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <div class="registration-form">
+    <h1>Sign Up</h1>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <%= form_for @user, url: signup_path do |f| %>
+      <div class="form-group">
+        <%= f.label :username %>
+        <%= f.text_field :username, class: 'form-control', required: true %>
+      </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control', required: true %>
+      </div>
 
-  <%= f.submit 'Sign Up' %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control', required: true %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit 'Sign Up', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Add your additional scripts or footer content here -->
+
+</body>
+</html>

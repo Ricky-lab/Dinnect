@@ -12,6 +12,7 @@ module Dinnect
     config.eager_load_paths << Rails.root.join('lib')
     config.active_record.schema_format = :sql
     config.filter_parameters += [:password, :credit_card]
+    config.assets.enabled = true
 
     # Uncomment if you want to enable the asset pipeline.
     # config.assets.enabled = true

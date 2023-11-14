@@ -1,16 +1,40 @@
 <!-- views/sessions/new.html.erb (User Login Form) -->
-<h1>Log In</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'auth', media: 'all' %>
+  <!-- Add your additional stylesheets or scripts here -->
+</head>
+<body>
 
-<%= form_for :session, url: login_path do |f| %>
-  <%= f.label :username_or_email %>
-  <%= f.text_field :username_or_email %>
+  <div class="login-form">
+    <h1>Log In</h1>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= form_for :session, url: login_path do |f| %>
+      <div class="form-group">
+        <%= f.label :username_or_email %>
+        <%= f.text_field :username_or_email, class: 'form-control', required: true %>
+      </div>
 
-  <%= f.submit 'Log In' %>
-  <%= link_to "Sign Up", signup_path %>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control', required: true %>
+      </div>
 
-  
+      <div class="form-actions">
+        <%= f.submit 'Log In', class: 'btn btn-primary' %>
+        <%= link_to "Sign Up", signup_path, class: 'btn btn-secondary' %>
+      </div>
+    <% end %>
+  </div>
 
-<% end %>
+  <!-- Add your additional scripts or footer content here -->
+
+</body>
+</html>
+

@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/sophie/Documents/COMS4152-Engineering-Software-as-a-Service/project/Dinnect/app/models/user.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -11,7 +11,7 @@
           null
         ]
       },
-      "/Users/sophie/Documents/COMS4152-Engineering-Software-as-a-Service/project/Dinnect/app/models/application_record.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/models/application_record.rb": {
         "lines": [
           null,
           1,
@@ -19,7 +19,7 @@
           null
         ]
       },
-      "/Users/sophie/Documents/COMS4152-Engineering-Software-as-a-Service/project/Dinnect/app/controllers/users_controller.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -50,7 +50,7 @@
           null
         ]
       },
-      "/Users/sophie/Documents/COMS4152-Engineering-Software-as-a-Service/project/Dinnect/app/controllers/application_controller.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -59,13 +59,13 @@
           null
         ]
       },
-      "/Users/sophie/Documents/COMS4152-Engineering-Software-as-a-Service/project/Dinnect/app/helpers/application_helper.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/sophie/Documents/COMS4152-Engineering-Software-as-a-Service/project/Dinnect/app/helpers/sessions_helper.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -86,13 +86,13 @@
           null
         ]
       },
-      "/Users/sophie/Documents/COMS4152-Engineering-Software-as-a-Service/project/Dinnect/app/helpers/users_helper.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/sophie/Documents/COMS4152-Engineering-Software-as-a-Service/project/Dinnect/app/controllers/sessions_controller.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -137,7 +137,7 @@
         ]
       }
     },
-    "timestamp": 1698881698
+    "timestamp": 1699924914
   },
   "RSpec": {
     "coverage": {
