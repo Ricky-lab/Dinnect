@@ -1,5 +1,23 @@
 <!-- app/views/users/show.html.erb -->
 
-<% if @current_user %>
-  <p>Welcome, <%= @current_user.username %></p>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'profile', media: 'all' %>
+  <!-- Add your additional stylesheets or scripts here -->
+</head>
+<body>
+
+  <div class="user-profile">
+
+  </div>
+
+  <!-- Add your additional scripts or footer content here -->
+
+</body>
+</html>
