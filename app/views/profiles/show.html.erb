@@ -1,0 +1,14 @@
+<!-- app/views/profiles/show.html.erb -->
+
+<h1><%= "#{@profile.first_name} #{@profile.last_name}'s Profile" %></h1>
+
+<p><strong>First Name:</strong> <%= @profile.first_name %></p>
+<p><strong>Last Name:</strong> <%= @profile.last_name %></p>
+<p><strong>Class Name:</strong> <%= @profile.class_name %></p>
+<p><strong>School:</strong> <%= @profile.school %></p>
+<p><strong>Major:</strong> <%= @profile.major %></p>
+<p><strong>Dietary Preference:</strong> <%= @profile.dietary_preference %></p>
+<p><strong>Email:</strong> <%= @profile.email %></p>
+
+<%= link_to 'Edit Profile', edit_profile_path(@profile) %>
+<%= link_to 'Back to Profiles', profiles_path %>

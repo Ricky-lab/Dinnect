@@ -14,10 +14,29 @@
 <body>
 
   <div class="user-profile">
-
+    <!-- Display user information here (you can customize this part based on your needs) -->
+    <h2>User Profile</h2>
+    <!-- Add more user details as needed -->
+      
+    <% if @user.profile %>
+      <!-- If the user has a profile, display profile details -->
+      <h3>Profile Details</h3>
+      <p>First Name: <%= @user.profile.first_name %></p>
+      <p>Last Name: <%= @user.profile.last_name %></p>
+      <p><strong>Class Name:</strong> <%= @user.profile.class_name %></p>
+      <p><strong>School:</strong> <%= @user.profile.school %></p>
+      <p><strong>Major:</strong> <%= @user.profile.major %></p>
+      <p><strong>Dietary Preference:</strong> <%= @user.profile.dietary_preference %></p>
+      <p><strong>Email:</strong> <%= @user.profile.email %></p>
+      <%= link_to "Edit Profile", new_profile_path, class: "create-profile-button" %>
+      <!-- Add more profile details as needed -->
+    <% else %>
+      <!-- If the user does not have a profile, show the create profile button -->
+      <%= link_to "Create Profile", new_profile_path, class: "create-profile-button" %>
+    <% end %>
   </div>
 
-  <!-- Add your additional scripts or footer content here -->
+  <!-- ... (additional scripts or footer content) ... -->
 
 </body>
 </html>

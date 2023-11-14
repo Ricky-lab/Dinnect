@@ -24,7 +24,9 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url
   end
-
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  end
   private
 
   # Define the log_in method to set the session
@@ -37,4 +39,6 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     @current_user = user # Set an instance variable to store the logged-in user
   end
+
+
 end
