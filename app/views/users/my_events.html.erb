@@ -1,0 +1,11 @@
+<h1>My Events</h1>
+
+<% @user_events.each do |event| %>
+  <div class="event">
+    <h2><%= event.title %></h2>
+    <p><%= event.description %></p>
+    <!-- Display other event details as needed -->
+  </div>
+<% end %>
+
+<%= link_to 'All Events', events_path, class: 'btn btn-primary return-to-all-events' %>
