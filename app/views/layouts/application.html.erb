@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <!-- Add your stylesheet link here -->
-    <%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'profile', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 
     <!-- Add your JavaScript includes here -->
@@ -20,14 +20,10 @@
           <ul class="navbar-nav">
             <% if current_user %>
               <li class="nav-item">
-                Welcome, <%= current_user.username %>!
+              <span class="welcome-message"> Welcome, <%= current_user.username %>!</span>
               </li>
               <li class="nav-item">
                 <%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to 'Login Page', login_path, class: 'nav-link' %>
               </li>
             <% end %>
           </ul>
