@@ -8,6 +8,8 @@ Dinnect::Application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  resources :profiles, only: [:new, :create,:show]
+
   # Other routes (if any)
   root to: 'sessions#new' # You can specify a different controller/action for the root path
 end

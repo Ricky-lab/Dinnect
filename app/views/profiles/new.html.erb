@@ -1,0 +1,39 @@
+<!-- app/views/profiles/new.html.erb -->
+
+<h1>Create Your Profile</h1>
+
+<%= form_for @profile do |f| %>
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :class_name %>
+    <%= f.text_field :class_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :school %>
+    <%= f.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= f.label :major %>
+    <%= f.text_field :major %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dietary_preference %>
+    <%= f.text_field :dietary_preference %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create Profile" %>
+  </div>
+<% end %>
