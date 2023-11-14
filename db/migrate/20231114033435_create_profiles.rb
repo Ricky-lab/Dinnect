@@ -7,6 +7,7 @@ class CreateProfiles < ActiveRecord::Migration[7.1]
       t.string :school
       t.string :major
       t.string :dietary_preference
+      t.string :email
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
