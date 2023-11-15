@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   # after sign up, this will automatically creata a new record in profile
   after_create :build_default_profile
-  after_update :sync_profile_email  
+  after_update :sync_profile_email
 
 
   def build_default_profile
@@ -21,6 +21,4 @@ class User < ApplicationRecord
   def sync_profile_email
     profile.update!(email: email) if profile.present?
   end
-
-
 end
