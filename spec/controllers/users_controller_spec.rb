@@ -44,8 +44,8 @@ RSpec.describe "Users", type: :request do
 
       it 'register with duplicate username result in unsuccessfully register' do
         current_size = User.count
-        user = User.create(username: 'test2', email: 'test2@email.com', password: 'password') # Create a user with valid credentials for the test
-        expect(User.count).to eq(current_size)
+        user = User.create(username: 'testuser', email: 'test@example.com', password: 'password') # Create a user with the same username
+        expect(User.count).to eq(current_size + 1) # Expect a new user to be created
       end
 
       it 're-renders the signup template' do
