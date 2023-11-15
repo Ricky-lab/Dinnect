@@ -1,16 +1,43 @@
-
 <h1>My Events</h1>
 
 <%= link_to 'My Profile', user_path(current_user), class: 'btn btn-info profile-button' %>
 
+<!-- Buttons for toggling views -->
+<button onclick="showHolders()">Show Holder Events</button>
+<button onclick="showParticipators()">Show Participator Events</button>
 
-<% @user_events.each do |user_event| %>
-  <div class="event">
-    <h2><%= user_event.event.title %></h2> 
-    <p>Role: <%= user_event.role.capitalize %></p> <!-- Display the user's role for the event -->
-    <p><%= user_event.event.description %></p>
+<!-- Holder Events Section -->
+<div id="holder-events" style="display: none;">
+  <% @holder_events.each do |user_event| %>
+    <div class="event">
+      <h2><%= user_event.event.title %></h2> 
+      <p>Role: <%= user_event.role.capitalize %></p>
+      <p><%= user_event.event.description %></p>
+    </div>
+  <% end %>
+</div>
 
-  </div>
-<% end %>
+<!-- Participator Events Section -->
+<div id="participator-events" style="display: none;">
+  <% @participator_events.each do |user_event| %>
+    <div class="event">
+      <h2><%= user_event.event.title %></h2> 
+      <p>Role: <%= user_event.role.capitalize %></p>
+      <p><%= user_event.event.description %></p>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to 'All Events', events_path, class: 'btn btn-primary return-to-all-events' %>
+
+<script>
+  function showHolders() {
+    document.getElementById('holder-events').style.display = 'block';
+    document.getElementById('participator-events').style.display = 'none';
+  }
+
+  function showParticipators() {
+    document.getElementById('holder-events').style.display = 'none';
+    document.getElementById('participator-events').style.display = 'block';
+  }
+</script>

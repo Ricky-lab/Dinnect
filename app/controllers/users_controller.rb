@@ -19,7 +19,9 @@ class UsersController < ApplicationController
 
   # to show all the related events
   def my_events
-    @user_events = current_user.user_events.includes(:event)
+    # @user_events = current_user.user_events.includes(:event)
+    @holder_events = current_user.user_events.where(role: 'holder').includes(:event)
+    @participator_events = current_user.user_events.where(role: 'participator').includes(:event)
   end
 
   private
