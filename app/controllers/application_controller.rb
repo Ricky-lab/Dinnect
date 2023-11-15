@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
+  def redirect_based_on_login
+    if logged_in?
+      redirect_to user_path(current_user)
+    else
+      redirect_to login_path
+    end
+  end
+  
   private
 
   def current_user

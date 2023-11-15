@@ -23,6 +23,6 @@ Dinnect::Application.routes.draw do
   end
 
   # Other routes (if any)
-  root to: 'sessions#new' # You can specify a different controller/action for the root path
-
+  root to: 'application#redirect_based_on_login'
+  
 end

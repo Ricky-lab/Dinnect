@@ -113,8 +113,37 @@ body {
 
   .profile-button {
     position: absolute;
-    top: 20px;
+    top: 25px;
     right: 20px;
+  }
+
+  .btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .profile-button {
+    background-color: #fff;
+    color: #3498db;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .event-button {
+    background-color: #fff;
+    color: #3498db;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
   

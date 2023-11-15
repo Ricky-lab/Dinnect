@@ -4,10 +4,28 @@
       "/home/wjh0706/iter2/Dinnect/app/models/user.rb": {
         "lines": [
           1,
-          1,
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          30,
+          null,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
@@ -19,33 +37,57 @@
           null
         ]
       },
+      "/home/wjh0706/iter2/Dinnect/app/models/profile.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          31,
+          null,
+          null
+        ]
+      },
       "/home/wjh0706/iter2/Dinnect/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
-          11,
+          12,
           null,
           null,
           1,
-          11,
-          11,
+          12,
+          12,
           null,
           8,
           null,
-          3,
+          4,
           null,
           null,
           null,
           1,
-          5,
+          9,
           null,
           null,
           null,
           1,
           null,
+          0,
+          0,
+          null,
           null,
           1,
-          11,
+          null,
+          1,
+          12,
           null,
           null
         ]
@@ -56,10 +98,51 @@
           null,
           null,
           1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          0,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          58,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
           null
         ]
       },
       "/home/wjh0706/iter2/Dinnect/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/wjh0706/iter2/Dinnect/app/helpers/events_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/wjh0706/iter2/Dinnect/app/helpers/profiles_helper.rb": {
         "lines": [
           1,
           null
@@ -75,8 +158,6 @@
           0,
           null,
           null,
-          1,
-          44,
           null,
           null,
           null,
@@ -102,12 +183,12 @@
           null,
           null,
           1,
-          8,
+          9,
           null,
           null,
-          8,
-          5,
-          5,
+          9,
+          6,
+          6,
           null,
           null,
           3,
@@ -121,23 +202,109 @@
           1,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
           null,
           1,
-          5,
+          6,
           null,
           null,
           null,
           1,
           0,
-          0,
+          null,
+          null,
+          null,
           null,
           null
         ]
+      },
+      "/home/wjh0706/iter2/Dinnect/app/controllers/profiles_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/wjh0706/iter2/Dinnect/app/controllers/events_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/iter2/Dinnect/app/models/event.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/wjh0706/iter2/Dinnect/app/models/user_event.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1699924914
+    "timestamp": 1700080150
   },
   "RSpec": {
     "coverage": {

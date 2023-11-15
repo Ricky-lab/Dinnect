@@ -28,16 +28,13 @@
       <p><strong>Major:</strong> <%= @user.profile.major %></p>
       <p><strong>Dietary Preference:</strong> <%= @user.profile.dietary_preference %></p>
       <p><strong>Email:</strong> <%= @user.profile.email %></p>
-      <%= link_to "Edit Profile", new_profile_path, class: "create-profile-button" %>
+      <%= link_to "Edit Profile", new_profile_path, class: 'btn btn-primary' %>
       <!-- Add more profile details as needed -->
-    <% else %>
-      <!-- If the user does not have a profile, show the create profile button -->
-      <%= link_to "Create Profile", new_profile_path, class: "create-profile-button" %>
-    <% end %>
-  </div>
+    <%= link_to 'Go to Events', events_path, class: 'btn btn-primary', id: 'events-button' %>
+  <% end %></div>
 
   <!-- ... (additional scripts or footer content) ... -->
-  <%= link_to 'Go to Events', events_path, class: 'btn btn-primary', id: 'events-button' %>
+  
 
 </body>
 </html>
