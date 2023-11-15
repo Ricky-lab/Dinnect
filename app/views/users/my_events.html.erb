@@ -1,10 +1,11 @@
 <h1>My Events</h1>
+<%= stylesheet_link_tag 'event', media: 'all' %>
 
 <%= link_to 'My Profile', user_path(current_user), class: 'btn btn-info profile-button' %>
 
 <!-- Buttons for toggling views -->
-<button onclick="showHolders()">Show Holder Events</button>
-<button onclick="showParticipators()">Show Participator Events</button>
+<button onclick="showHolders()" class="btn btn-primary toggle-button">Show Holder Events</button>
+<button onclick="showParticipators()" class="btn btn-primary toggle-button">Show Participator Events</button>
 
 <!-- Holder Events Section -->
 <div id="holder-events" style="display: none;">
