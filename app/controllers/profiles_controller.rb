@@ -12,14 +12,14 @@ class ProfilesController < ApplicationController
         render :new
       end
     end
-    def show
-        if @profile
-            # The profile was found, render the show page
-        else
-            # The profile was not found, redirect or handle as needed
-            redirect_to users_path(@current_user)
-        end
-      end
+    # def show
+    #     if @profile
+    #         # The profile was found, render the show page
+    #     else
+    #         # The profile was not found, redirect or handle as needed
+    #         redirect_to users_path(@current_user)
+    #     end
+    #   end
     private
   
     def profile_params
