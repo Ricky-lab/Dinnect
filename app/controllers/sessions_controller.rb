@@ -36,11 +36,11 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
   end
 
-  # Define the log_out method to log the user out by removing the session
-  def log_out
-    session.delete(:user_id)
-    # @current_user = user # Set an instance variable to store the logged-in user
-  end
+  # # Define the log_out method to log the user out by removing the session
+  # def log_out
+  #   session.delete(:user_id)
+  #   # @current_user = user # Set an instance variable to store the logged-in user
+  # end
 
 
 end

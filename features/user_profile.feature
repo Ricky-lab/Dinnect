@@ -8,13 +8,6 @@ Background: Existing Users
     | email             | username | password     |
     | alice@columbia.edu| al1234   | Vegetarian   |
     | bob@columbia.edu  | bo1234   | Gluten-Free  |
-
-Scenario: Viewing own profile
-  When I go to the User page for "al1234"
-  Then I should see "User Profile"
-  And I should see "Email: alice@columbia.edu"
-
-Scenario: Create/Edit profile information
   When I go to the Registration page
   And I fill in "Username" with "al1234"
   And I fill in "Email" with "alice@columbia.edu"
@@ -26,6 +19,14 @@ Scenario: Create/Edit profile information
   And I press "Log In"
   Then I should be on the User page for "al1234"
   Then I should see "Welcome, al1234!"
+
+Scenario: Viewing own profile
+  When I go to the User page for "al1234"
+  Then I should see "User Profile"
+  And I should see "Email: alice@columbia.edu"
+
+Scenario: Create/Edit profile information
+
 
   When I go to the User page for "al1234"
   And I follow "Edit Profile"

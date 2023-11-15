@@ -18,6 +18,8 @@ module NavigationHelpers
     when /^the Log Out page$/ then logout_path    
     when /^the User page for "(.+)"$/ then user_path(User.find_by(username: $1)||User.find_by(email: $1)) #'/users/'+(User.find_by(username: $1).id)
     when /^the Profile page$/ then new_profile_path
+    when /^the All Events page$/ then events_path
+    when /^the My Events page for '(.+)'$/ then my_events_user_path(User.find_by(username: $1)||User.find_by(email: $1))
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
