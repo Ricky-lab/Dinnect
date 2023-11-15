@@ -96,4 +96,25 @@ body {
     font-weight: bold;
     color: #3498db;
   }
+
+  /* Styling for the Events button*/
+  .events-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  /* app/assets/stylesheets/users.css */
+  .return-to-all-events {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .profile-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
   

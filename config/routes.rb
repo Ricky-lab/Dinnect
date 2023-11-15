@@ -1,4 +1,5 @@
 Dinnect::Application.routes.draw do
+  get 'events/index'
   resources :users, only: [:new, :create, :show]
 
   # Custom user routes
@@ -10,6 +11,18 @@ Dinnect::Application.routes.draw do
 
   resources :profiles, only: [:new, :create,:show]
 
+  resources :events, only: [:index]
+
+  # Inside config/routes.rb
+  # get 'users/:id/my_events', to: 'users#my_events', as: 'user_events'
+
+  resources :users do
+    member do
+      get :my_events
+    end
+  end
+
   # Other routes (if any)
   root to: 'sessions#new' # You can specify a different controller/action for the root path
+
 end
