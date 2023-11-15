@@ -19,11 +19,10 @@ class UsersController < ApplicationController
 
   # to show all the related events
   def my_events
-    @user_events = current_user.events
+    @user_events = current_user.user_events.includes(:event)
   end
 
   private
-
 
   def user_params
     params.require(:user).permit(:username, :email, :password)

@@ -1,13 +1,15 @@
+
 <h1>My Events</h1>
 
 <%= link_to 'My Profile', user_path(current_user), class: 'btn btn-info profile-button' %>
 
 
-<% @user_events.each do |event| %>
+<% @user_events.each do |user_event| %>
   <div class="event">
-    <h2><%= event.title %></h2>
-    <p><%= event.description %></p>
-    <!-- Display other event details as needed -->
+    <h2><%= user_event.event.title %></h2> 
+    <p>Role: <%= user_event.role.capitalize %></p> <!-- Display the user's role for the event -->
+    <p><%= user_event.event.description %></p>
+
   </div>
 <% end %>
 

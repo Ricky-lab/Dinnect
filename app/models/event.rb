@@ -10,5 +10,5 @@ class Event < ApplicationRecord
   validates :location_coordinates, presence: true
 
   # Enums
-  enum status: { active: 0, completed: 1, cancelled: 2 }
+  enum status: { active: 0, full: 1, completed: 2, cancelled: 3 }
 end
