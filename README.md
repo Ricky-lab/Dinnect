@@ -54,14 +54,26 @@ Then go to `localhost:4001`.
 + Use `Cucumber` to do `BDD` in command line:
 
   ```bash
-  rake cucumber
+  bundle exec rake cucumber
   ```
 
-+ Pass cucumber with good coverage: 44 / 48 LOC (91.67%)
++ Pass Cucumber with good coverage: 101 / 105 LOC (96.19%)
 
 + Design
-  + Common registration and login processes 
-  + Exceptional cases, such as attempts to register with already existing emails or usernames and login attempts with incorrect credentials
+  + Registration: 
+    + Register successfully with username, email (should have @), password.
+    + Register unsuccessfully if (1) email does not have @ (2) email has been used for register already (3) username has been used for register already
+  + Login: 
+    + Log in successfully with correct username/email and password
+    + Log out successfully
+    + Log in unsuccessfully with (1) wrong password for username/email (2) not existing username/email
+  + Profile: 
+    + View own Profile page
+    + Create/Edit Profile page
+  + Event: 
+    + View All Events page
+    + View My Events page
+    + Transfer freely among All Events, My Events and Profile pages
 
 ## Testing: RSpec
 
@@ -72,13 +84,16 @@ Then go to `localhost:4001`.
   ```
 
 + All files are in `'./spec'`
-+ Pass cucumber with good coverage: 46 / 48 LOC (95.83%)
+
++ Pass RSpec with good coverage: 101 / 105 LOC (96.19%)
+
 + Design
   + Align with the Model-View-Controller (MVC) pattern
-  + **Model Tests (`user_model_spec.rb`)**: These tests validate the core business logic encapsulated within the models. They ensure that a `User` is only considered valid when all necessary attributes are present and correctly formatted, particularly focusing on the username, email, and password. The negative cases also ensure that appropriate validations are triggered when invalid data is provided, reinforcing the integrity of user data within the system.
-  + **Controller Tests (`sessions_controller_spec.rb` and `users_controller_spec.rb`)**: Controller tests scrutinize the application's HTTP endpoints for both session handling (login and logout) and user management (signup and profile viewing). They carefully examine the behavior of the application when presented with both valid and invalid form submissions. The tests encompass scenarios of successful logins, correctly handling logouts, and ensuring proper user creation upon signup with validation feedback when incorrect data is submitted.
-  + **Request Tests (`sessions_spec.rb` and `users_spec.rb`)**: Request tests simulate real HTTP requests to the application, providing an end-to-end check that involves routing, controllers, models, and views. These tests emulate user interaction with the login and signup pages, ensuring that the application responds with the correct HTTP status codes and renders the expected pages upon these requests.
-  + **Helper Tests (`sessions_helper_spec.rb`)**: The tests for helpers validate utility functions that manage user sessions. They ensure that methods such as `log_in`, `current_user`, and `logged_in?` behave as expected, confirming that the login state is preserved across the application and that the current user is correctly identified throughout the session's lifecycle.
+  + Model Tests: Assess key functionalities of the Event, Profile, UserEvent, and User models, including validations of essential attributes, the integrity of model associations, the functionality of enums and callbacks, and the enforcement of uniqueness constraints.
+  + View Tests: Ensure the correct rendering of the `events/index` and `users/my_events` views.
+  + Controller Tests:  Test the HTTP request-response cycle for various routes, including user authentication (login and logout), user registration, profile creation, and event management, ensuring correct behavior, status codes, and redirections based on valid and invalid input scenarios.
+  + Request Tests: Validate the HTTP request-response cycle across various controllers, including the handling of user sessions, profile management, event listing, and user registration, ensuring appropriate responses, redirects, and view renderings for both valid and invalid user interactions.
+  + Helper Tests:  Validate the functionality of ApplicationHelper and SessionsHelper modules, specifically testing methods like `current_user`, `logged_in?`, and `log_in`, to ensure they correctly identify and manage user login states.
 
 ## Deployment
 
@@ -116,17 +131,21 @@ Then go to `localhost:4001`.
 - <del>RSpec</del>
 
 
-### Sprint 2: Oct 27, 2023
+### Sprint 2: Nov 15, 2023
 #### Front:
 
+1. <del>Profile</del>
+2. <del>Create Profile Page</del>
+3. <del>Event Pages (All and Personal)</del>
+
 #### Back: 
-1. Populating db
-2. db deployment
-3. MVC testing
+1. <del>Create main db</del>
+1. <del>MVC for Profile</del>
+1. <del>MVC for Events</del>
 
 #### User story
 
-+ Cucumber
++ <del>Cucumber</del>
 
 #### Test unit setting
-- RSpec
+- <del>RSpec</del>
