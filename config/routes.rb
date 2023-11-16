@@ -11,7 +11,7 @@ Dinnect::Application.routes.draw do
 
   resources :profiles, only: [:new, :create,:show]
 
-  resources :events, only: [:index]
+  resources :events, only: [:index,:create,:new,:show,:edit,:update]
 
   # Inside config/routes.rb
   # get 'users/:id/my_events', to: 'users#my_events', as: 'user_events'

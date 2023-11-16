@@ -1,0 +1,11 @@
+<h1><%= @event.title %></h1>
+
+<p><strong>Description:</strong> <%= @event.description %></p>
+<p><strong>Start Time:</strong> <%= @event.start_time %></p>
+<p><strong>Duration:</strong> <%= @event.duration %> hours</p>
+<p><strong>Location Name:</strong> <%= @event.location_name %></p>
+<p><strong>Location Coordinates:</strong> <%= @event.location_coordinates %></p>
+<p><strong>Status:</strong> <%= @event.status %></p>
+
+
+<%= link_to 'Back', events_path %>
