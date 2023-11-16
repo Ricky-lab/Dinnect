@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in(user)
       redirect_to user_path(user)  # Replace with the desired redirection
-      # redirect_to user  # Replace with the desirexd redirection
     else
       flash.now[:danger] = 'Invalid username/email and password combination'
       render 'new'

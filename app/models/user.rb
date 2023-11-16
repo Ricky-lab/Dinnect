@@ -5,8 +5,8 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
 
   # Validations
-  validates :username, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   has_secure_password
 
   # after sign up, this will automatically creata a new record in profile

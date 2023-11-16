@@ -10,6 +10,16 @@
   <%= stylesheet_link_tag 'auth', media: 'all' %>
 </head>
 <body>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        <li>If you have any questions, please contact the Administrator.</li>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="registration-form">
     <h1>Sign Up</h1>
@@ -33,10 +43,10 @@
       <div class="form-actions">
         <%= f.submit 'Sign Up', class: 'btn btn-primary' %>
       </div>
+
     <% end %>
   </div>
 
   <!-- Add your additional scripts or footer content here -->
-
 </body>
 </html>

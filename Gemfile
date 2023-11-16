@@ -45,3 +45,5 @@ gem 'activerecord'
 gem 'bcrypt' 
 
 gem 'rails-controller-testing'
+
+gem 'bootstrap', '~> 5.1.3'
