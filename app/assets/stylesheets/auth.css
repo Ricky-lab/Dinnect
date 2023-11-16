@@ -70,3 +70,26 @@
   .btn-secondary:hover {
     background-color: #217dbb;
   }
+
+  /* app/assets/stylesheets/auth.css */
+
+/* Custom styles for alert */
+.alert-danger {
+  margin-bottom: 1rem;
+  font-size: 1.3rem; /* Increase font size */
+  background-color: #f8d7da; /* Bootstrap danger background */
+  border-color: #f5c6cb; /* Bootstrap danger border */
+  color: #721c24; /* Bootstrap danger text */
+}
+
+/* If you want a simple shake animation for the error */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.alert {
+  animation: shake 1.0s ease-in-out;
+}

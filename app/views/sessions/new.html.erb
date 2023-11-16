@@ -11,6 +11,12 @@
   <!-- Add your additional stylesheets or scripts here -->
 </head>
 <body>
+<% if flash.now[:danger] %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error:</strong> <%= flash.now[:danger] %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
 
   <div class="login-form">
     <h1>Log In</h1>
