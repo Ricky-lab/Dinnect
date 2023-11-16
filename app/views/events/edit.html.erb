@@ -1,0 +1,44 @@
+<h1>Edit Event</h1>
+
+<%= form_with(model: @event, local: true) do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :start_time %>
+    <%= form.datetime_local_field :start_time %>
+  </div>
+
+  <div>
+    <%= form.label :duration %>
+    <%= form.number_field :duration %>
+  </div>
+
+  <div>
+    <%= form.label :location_name %>
+    <%= form.text_field :location_name %>
+  </div>
+
+  <div>
+    <%= form.label :location_coordinates %>
+    <%= form.text_field :location_coordinates %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, Event.statuses.keys %>
+  </div>
+
+  <div>
+    <%= form.submit 'Update Event' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', events_path %>

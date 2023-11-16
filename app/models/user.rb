@@ -13,6 +13,13 @@ class User < ApplicationRecord
   after_create :build_default_profile
   after_update :sync_profile_email
 
+  def joined_event?(event)
+    user_events.exists?(event: event, role: "participator")
+  end
+
+  def hold_event?(event)
+    user_events.exists?(event: event, role: "holder")
+  end
 
   def build_default_profile
     build_profile(email: self.email).save

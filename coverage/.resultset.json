@@ -304,23 +304,37 @@
         }
       }
     },
-    "timestamp": 1700080150
+    "timestamp": 1700101942
   },
   "RSpec": {
     "coverage": {
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/helpers/application_helper.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/wjh0706/iter2/Dinnect/app/helpers/events_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/helpers/profiles_helper.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/helpers/profiles_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/helpers/sessions_helper.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -330,8 +344,6 @@
           3,
           null,
           null,
-          1,
-          20,
           null,
           null,
           null,
@@ -341,13 +353,13 @@
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/helpers/users_helper.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/models/user.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/models/user.rb": {
         "lines": [
           1,
           null,
@@ -372,12 +384,10 @@
           1,
           0,
           null,
-          null,
-          null,
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/models/application_record.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/models/application_record.rb": {
         "lines": [
           null,
           1,
@@ -385,7 +395,7 @@
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/controllers/sessions_controller.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -413,8 +423,10 @@
           4,
           4,
           null,
-          1,
-          0,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
           null,
@@ -426,23 +438,44 @@
           null,
           1,
           0,
-          0,
+          null,
           null,
           null,
           null,
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/controllers/application_controller.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
           null,
           1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          17,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/models/profile.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/models/profile.rb": {
         "lines": [
           1,
           null,
@@ -461,7 +494,7 @@
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/controllers/users_controller.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -485,6 +518,11 @@
           null,
           1,
           null,
+          0,
+          0,
+          null,
+          null,
+          1,
           null,
           1,
           6,
@@ -492,7 +530,34 @@
           null
         ]
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/controllers/profiles_controller.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/controllers/events_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/wjh0706/iter2/Dinnect/app/models/event.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/wjh0706/iter2/Dinnect/app/controllers/profiles_controller.rb": {
         "lines": [
           0,
           0,
@@ -526,27 +591,7 @@
         "branches": {
         }
       },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/models/event.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/rickyruan/Desktop/Columbia/Courses/COMPS-4152/COMPS-W4152-Fall2023/app/models/user_event.rb": {
+      "/home/wjh0706/iter2/Dinnect/app/models/user_event.rb": {
         "lines": [
           0,
           null,
@@ -564,6 +609,6 @@
         }
       }
     },
-    "timestamp": 1699995285
+    "timestamp": 1700101950
   }
 }
