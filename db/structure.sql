@@ -20,8 +20,8 @@ CREATE INDEX "index_user_events_on_event_id" ON "user_events" ("event_id");
 CREATE UNIQUE INDEX "index_user_events_on_user_id_and_event_id" ON "user_events" ("user_id", "event_id");
 CREATE TABLE IF NOT EXISTS "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "start_time" datetime(6), "duration" integer, "location_name" varchar, "location_coordinates" varchar, "tags" varchar, "status" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);
 INSERT INTO "schema_migrations" (version) VALUES
-('20231114033719'),
 ('20231114033608'),
+('20231114033519'),
 ('20231114033435'),
 ('20231114033047');
 
