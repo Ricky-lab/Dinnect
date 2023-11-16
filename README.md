@@ -1,4 +1,4 @@
-# Project: [Dinnect ](https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/) 
+# Project: [Dinnect ](https://dinnect-71eda9ef843e.herokuapp.com/login) 
 ## Group members:
 - Yuehui Ruan
 - Ruoxing Liao
@@ -11,7 +11,7 @@ We analyze the needs and tell you why you should believe Dinnect can be a __go-t
 
 <br>
 
-## Minimal Viable Prototype: [Dinnect](https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/)(Iter-1)
+## Minimal Viable Prototype: [Dinnect](https://dinnect-71eda9ef843e.herokuapp.com/login)(Iter-2)
 
 <br>
 
