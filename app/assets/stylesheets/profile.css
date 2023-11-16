@@ -146,4 +146,21 @@ body {
     cursor: pointer;
   }
   
+  .container {
+    max-width: 600px; 
+    margin: auto; 
+  }
+  
+  .display-4 {
+    text-align: center; 
+    margin-bottom: 20px; 
+  }
+  
+  .form-group {
+    margin-bottom: 15px; 
+  }
+  
+  .btn-lg {
+    padding: 10px 30px; 
+  }
   
