@@ -9,7 +9,7 @@ Dinnect::Application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :profiles, only: [:new, :create,:show]
+  resources :profiles
 
   resources :events, only: [:index]
 
@@ -24,5 +24,5 @@ Dinnect::Application.routes.draw do
 
   # Other routes (if any)
   root to: 'application#redirect_based_on_login'
-  
+
 end
