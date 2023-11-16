@@ -13,10 +13,11 @@
 
   <div class="container">
     <h1>All Events</h1>
+    <%= link_to 'New Event', new_event_path %>
     <div class="events-list">
       <% @events.each do |event| %>
         <div class="event">
-          <h2><%= event.title %></h2>
+          <h2><%= link_to event.title, event_path(event) %></h2>
           <p><%= event.description %></p>
           <!-- Add other event details you want to show -->
         </div>

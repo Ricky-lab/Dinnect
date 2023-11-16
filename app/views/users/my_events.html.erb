@@ -4,16 +4,17 @@
 <%= link_to 'My Profile', user_path(current_user), class: 'btn btn-info profile-button' %>
 
 <!-- Buttons for toggling views -->
-<button onclick="showHolders()" class="btn btn-primary toggle-button">Events I Hold</button>
-<button onclick="showParticipators()" class="btn btn-primary toggle-button">Events I Join</button>
-
+<button onclick="showHolders()" class="btn btn-primary toggle-button">Show Holder Events</button>
+<button onclick="showParticipators()" class="btn btn-primary toggle-button">Show Participator Events</button>
+<%= link_to 'New Event', new_event_path %>
 <!-- Holder Events Section -->
 <div id="holder-events" style="display: none;">
   <% @holder_events.each do |user_event| %>
     <div class="event">
-      <h2><%= user_event.event.title %></h2> 
+      <h2><%= link_to user_event.event.title, event_path(user_event.event) %></h2> 
       <!-- <p>Role: <%= user_event.role.capitalize %></p> -->
       <p><%= user_event.event.description %></p>
+      <%= link_to 'Edit', edit_event_path(user_event.event) %>
     </div>
   <% end %>
 </div>
@@ -22,7 +23,7 @@
 <div id="participator-events" style="display: none;">
   <% @participator_events.each do |user_event| %>
     <div class="event">
-      <h2><%= user_event.event.title %></h2> 
+      <h2><%= link_to user_event.event.title, event_path(user_event.event) %></h2> 
       <!-- <p>Role: <%= user_event.role.capitalize %></p> -->
       <p><%= user_event.event.description %></p>
     </div>
@@ -41,4 +42,7 @@
     document.getElementById('holder-events').style.display = 'none';
     document.getElementById('participator-events').style.display = 'block';
   }
+  window.onload = function() {
+    showHolders();
+  };
 </script>
