@@ -41,6 +41,36 @@ class EventsController < ApplicationController
     end
   end
 
+  def join
+    @event = Event.find(params[:id])
+    @participant ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    @user_event = UserEvent.new(
+      user: @participant,
+      event: @event,
+      role: "participator"
+    )
+
+    if @user_event.save
+      redirect_to @event, notice: 'You have successfully joined the event.'
+    else
+      redirect_to @event, alert: 'Unable to join the event.'
+    end
+  end
+
+  def leave
+    @event = Event.find(params[:id])
+    current_user.user_events.find_by(event: @event, role: "participator")&.destroy
+
+    redirect_to @event, notice: 'You have successfully left the event.'
+  end
+
+  def cancel
+    @event = Event.find(params[:id])
+    @event.update(status: 'cancelled')
+
+    redirect_to @event, notice: 'The event has been cancelled.'
+  end
+
   private
 
   def event_params

@@ -9,6 +9,9 @@ class Event < ApplicationRecord
   validates :start_time, presence: true
   validates :location_coordinates, presence: true
 
+  def active?
+    status == 'active'
+  end
   # Enums
   enum status: { active: 0, full: 1, completed: 2, cancelled: 3 }
 end
