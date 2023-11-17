@@ -15,7 +15,7 @@ We analyze the needs and tell you why you should believe Dinnect can be a __go-t
 <br>
 
 ## Iteration documentation:
-- [Dinnect: Iter 1](iter.md) - 10/27/2023
+- [Dinnect: Iter 1](iter1.md) - 10/27/2023
 - [Dinnect: Iter 2](https://github.com/Ricky-lab/Dinnect/blob/iter2/README.md) - 11/15/2023
   
 
