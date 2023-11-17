@@ -11,7 +11,7 @@ We analyze the needs and tell you why you should believe Dinnect can be a __go-t
 
 <br>
 
-## Dinnect Project Prototype: [Dinnect](https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/)
+## Dinnect Project Prototype: [Dinnect](https://dinnect-71eda9ef843e.herokuapp.com/login)
 <br>
 
 ## Installation:
