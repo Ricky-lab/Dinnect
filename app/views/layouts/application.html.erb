@@ -5,20 +5,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <!-- Add your stylesheet link here -->
-    <%= stylesheet_link_tag 'profile', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-
-    <!-- Add your JavaScript includes here -->
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="container">
-          <span class="navbar-brand">Dinnect</span>
-          <ul class="navbar-nav">
-            <% if current_user %>
+
+    <header name="top">
+
+      <nav class="navbar navbar-default navbar-fixed-top nav-color" role="navigation" id="nav">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header nav-color">
+            
+            <ul class="nav navbar-nav navbar-right custom">
+              <% if current_user %>
               <li class="nav-item">
               <span class="welcome-message"> Welcome, <%= current_user.username %>!</span>
               </li>
@@ -26,10 +31,28 @@
                 <%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
               </li>
             <% end %>
-          </ul>
+            </ul>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse nav-submenu-color collapse" id="bs-navbar-collapse-1">
+            
+          </div>
+          <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container-->
       </nav>
     </header>
+
+    <% if flash[:success] %>
+      <div class="alert alert-success">
+        <%= flash[:success] %>
+      </div>
+    <% elsif flash[:danger] %>
+      <div class="alert alert-danger">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
 
     <main class="container">
       <%= yield %>
