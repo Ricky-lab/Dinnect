@@ -79,10 +79,10 @@
 
 
 <div style="position: fixed; bottom: 20px; right: 20px;">
-    <%= link_to 'New Event', new_event_path, class: 'btn btn-new-event' %> <!-- mb-2 为按钮添加一些底部外边距 -->
+  <%= link_to 'New Event', new_event_path, class: 'btn btn-new-event', style: 'display: block; margin-bottom: 60px;' %> 
+  <%= link_to 'All Events', events_path, class: 'btn btn-primary return-to-all-events', style: 'display: block;' %> 
+</div>
 
-    <%= link_to 'All Events', events_path, class: 'btn btn-primary return-to-all-events' %>
-  </div>
   
 <script>
   function showHolders() {
