@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # User registration successful, handle as needed (e.g., sign them in).
+      flash[:success] = "Sign-up was successful. You can now log in."
       redirect_to login_path, notice: 'Registration successful! Please log in.'
     else
       render 'new'
@@ -21,7 +22,8 @@ class UsersController < ApplicationController
   def my_events
     # @user_events = current_user.user_events.includes(:event)
     @holder_events = current_user.user_events.where(role: 'holder').includes(:event)
-    @participator_events = current_user.user_events.where(role: 'participator').includes(:event)
+    # @participator_events = current_user.user_events.where(role: 'participator').includes(:event)
+    @participator_events = current_user.user_events.where(role: 'participator').includes(event: :user_events).where.not(id: @holder_events.pluck(:id))
   end
 
   private

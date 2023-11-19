@@ -19,6 +19,10 @@
         <li>If you have any questions, please contact the Administrator.</li>
       </ul>
     </div>
+  <% elsif flash[:success] %>
+    <div class="alert alert-success">
+      <%= flash[:success] %>
+    </div>
   <% end %>
 
   <div class="registration-form">

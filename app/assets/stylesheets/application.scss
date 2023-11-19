@@ -1,4 +1,11 @@
 /* app/assets/stylesheets/application.css */
+// @import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "auth";
+@import "event";
+@import "profile";
+@import "sessions";
 
 body {
   font-family: 'Arial', sans-serif;
@@ -52,7 +59,7 @@ header {
 
 /* Page content styles */
 .container {
-  padding: 20px;
+  padding: 10px;
 }
 
 /* Additional styling for links */
@@ -96,4 +103,5 @@ header {
   font-weight: bold;
   color: #3498db;
 }
+
 
