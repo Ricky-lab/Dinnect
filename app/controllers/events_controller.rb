@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
+    @user_events_by_event_id = UserEvent.where(role: "holder").includes(:user).group_by(&:event_id)
   end
 
   def show
     @event = Event.find(params[:id])
+    @user_events_by_event_id = UserEvent.where(role: "holder").includes(:user).group_by(&:event_id)
   end
 
   def new

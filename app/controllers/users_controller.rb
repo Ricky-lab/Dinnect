@@ -22,7 +22,8 @@ class UsersController < ApplicationController
   def my_events
     # @user_events = current_user.user_events.includes(:event)
     @holder_events = current_user.user_events.where(role: 'holder').includes(:event)
-    @participator_events = current_user.user_events.where(role: 'participator').includes(:event)
+    # @participator_events = current_user.user_events.where(role: 'participator').includes(:event)
+    @participator_events = current_user.user_events.where(role: 'participator').includes(event: :user_events).where.not(id: @holder_events.pluck(:id))
   end
 
   private

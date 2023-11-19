@@ -6,7 +6,6 @@
 <!-- Buttons for toggling views -->
 <button onclick="showHolders()" class="btn btn-primary toggle-button">Show Holder Events</button>
 <button onclick="showParticipators()" class="btn btn-primary toggle-button">Show Participator Events</button>
-<%= link_to 'New Event', new_event_path %>
 
 <!-- Holder Events Section -->
 <div id="holder-events" class="container-fluid" style="display: none;">
@@ -22,6 +21,15 @@
               <div class="card-body">
                 <h5 class="card-title"><%= link_to user_event.event.title, event_path(user_event.event) %></h5>
                 <p class="card-text"><%= user_event.event.description %></p>
+                <p class="card-text">
+                  When: <%= user_event.event.start_time.strftime("%A, %d %b %Y %l:%M %p") %> <!-- 格式化时间 -->
+                </p>
+                <p class="card-text">
+                  Where: <%= user_event.event.location_name %> <!-- 假设 'location' 是事件的一个属性 -->
+                </p>
+                <p class="card-text">
+                  Status: <%= user_event.event.status %> <!-- 假设 'status' 是事件的一个属性 -->
+                </p>
                 <p class="card-text"><small class="text-muted">Last updated <%= time_ago_in_words(user_event.event.updated_at) %> ago</small></p>
                 <%= link_to 'Edit', edit_event_path(user_event.event) %>
               </div>
@@ -46,7 +54,19 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title"><%= link_to user_event.event.title, event_path(user_event.event) %></h5>
-                <p class="card-text"><%= user_event.event.description %></p>
+                <p class="card-text">
+                  Hosted by:
+                  <%= user_event.event.user_events.find_by(role: 'holder').user.profile.first_name %> <%= user_event.event.user_events.find_by(role: 'holder').user.profile.last_name %>
+                </p>
+                <p class="card-text">
+                  When: <%= user_event.event.start_time.strftime("%A, %d %b %Y %l:%M %p") %> <!-- 格式化时间 -->
+                </p>
+                <p class="card-text">
+                  Where: <%= user_event.event.location_name %> 
+                </p>
+                <p class="card-text">
+                  Status: <%= user_event.event.status %> 
+                </p>
                 <p class="card-text"><small class="text-muted">Last updated <%= time_ago_in_words(user_event.event.updated_at) %> ago</small></p>
               </div>
             </div>
@@ -58,8 +78,12 @@
 </div>
 
 
-<%= link_to 'All Events', events_path, class: 'btn btn-primary return-to-all-events' %>
+<div style="position: fixed; bottom: 20px; right: 20px;">
+    <%= link_to 'New Event', new_event_path, class: 'btn btn-new-event' %> <!-- mb-2 为按钮添加一些底部外边距 -->
 
+    <%= link_to 'All Events', events_path, class: 'btn btn-primary return-to-all-events' %>
+  </div>
+  
 <script>
   function showHolders() {
     document.getElementById('holder-events').style.display = 'block';
