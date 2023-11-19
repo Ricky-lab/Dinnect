@@ -7,28 +7,56 @@
 <button onclick="showHolders()" class="btn btn-primary toggle-button">Show Holder Events</button>
 <button onclick="showParticipators()" class="btn btn-primary toggle-button">Show Participator Events</button>
 <%= link_to 'New Event', new_event_path %>
+
 <!-- Holder Events Section -->
-<div id="holder-events" style="display: none;">
+<div id="holder-events" class="container-fluid" style="display: none;">
   <% @holder_events.each do |user_event| %>
-    <div class="event">
-      <h2><%= link_to user_event.event.title, event_path(user_event.event) %></h2> 
-      <!-- <p>Role: <%= user_event.role.capitalize %></p> -->
-      <p><%= user_event.event.description %></p>
-      <%= link_to 'Edit', edit_event_path(user_event.event) %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-3 card-custom">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="https://source.unsplash.com/random/400x300?campus&sig=<%= user_event.event.id %>" class="card-img card-img-custom" alt="Campus Image">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to user_event.event.title, event_path(user_event.event) %></h5>
+                <p class="card-text"><%= user_event.event.description %></p>
+                <p class="card-text"><small class="text-muted">Last updated <%= time_ago_in_words(user_event.event.updated_at) %> ago</small></p>
+                <%= link_to 'Edit', edit_event_path(user_event.event) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
 
 <!-- Participator Events Section -->
-<div id="participator-events" style="display: none;">
+<div id="participator-events" class="container-fluid" style="display: none;">
   <% @participator_events.each do |user_event| %>
-    <div class="event">
-      <h2><%= link_to user_event.event.title, event_path(user_event.event) %></h2> 
-      <!-- <p>Role: <%= user_event.role.capitalize %></p> -->
-      <p><%= user_event.event.description %></p>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-3 card-custom">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="https://source.unsplash.com/random/400x300?campus&sig=<%= user_event.event.id %>" class="card-img card-img-custom" alt="Campus Image">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to user_event.event.title, event_path(user_event.event) %></h5>
+                <p class="card-text"><%= user_event.event.description %></p>
+                <p class="card-text"><small class="text-muted">Last updated <%= time_ago_in_words(user_event.event.updated_at) %> ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
+
 
 <%= link_to 'All Events', events_path, class: 'btn btn-primary return-to-all-events' %>
 

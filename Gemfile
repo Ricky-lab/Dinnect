@@ -32,7 +32,6 @@ end
 # in production environments by default.
 
 gem 'sass-rails', '~> 5.0.3'
-#gem 'uglifier', '>= 2.7.1'
 gem 'uglifier', '~> 4.2'
 gem 'jquery-rails'
 gem 'actioncable', '7.1.1'
