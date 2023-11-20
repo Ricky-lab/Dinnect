@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  before_action -> { authenticate_user(params[:id].to_i) }, only: [:edit, :update, :show, :destory]
+
+
   def index
     @events = Event.all
     @user_events_by_event_id = UserEvent.where(role: "holder").includes(:user).group_by(&:event_id)

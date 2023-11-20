@@ -23,4 +23,12 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
 
+  # Custom method for authentication
+  def authenticate_user(user_id)
+    unless current_user && current_user.id == user_id
+      flash[:danger] = "You are not authorized to access this information."
+      redirect_to root_path
+    end
+  end
+
 end
