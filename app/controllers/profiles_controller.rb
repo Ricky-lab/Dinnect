@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
 
+  before_action -> { authenticate_user(params[:id].to_i) }, only: [:edit, :update, :show, :destory]
+
   before_action :set_current_user
   before_action :set_profile, only: [:edit, :update, :show]
 
