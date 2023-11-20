@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_action :auth_user, only: [:show, :my_events]
+
+
   def new
     @user = User.new
   end
@@ -31,4 +35,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
+
+  def auth_user
+    unless session[:user_id]
+      flash[:danger] = "Please log in."
+      redirect_to login_path
+    end
+  end
+
 end
