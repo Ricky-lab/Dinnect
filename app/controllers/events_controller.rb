@@ -1,6 +1,4 @@
 class EventsController < ApplicationController
-  before_action -> { authenticate_user(params[:id].to_i) }, only: [:edit, :update, :show, :destory]
-
 
   def index
     @events = Event.all
