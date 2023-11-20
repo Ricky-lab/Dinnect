@@ -1,4 +1,4 @@
-# Project: [Dinnect ](https://blooming-mesa-33682-02a98668ba0d.herokuapp.com/) 
+# Project: [Dinnect ](https://dinnect-71eda9ef843e.herokuapp.com/login) 
 ## Group members:
 - Yuehui Ruan
 - Ruoxing Liao
