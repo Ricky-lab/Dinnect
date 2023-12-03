@@ -4,8 +4,9 @@
 <%= link_to 'My Profile', user_path(current_user), class: 'btn btn-info profile-button' %>
 
 <!-- Buttons for toggling views -->
-<button onclick="showHolders()" class="btn btn-primary toggle-button">Show Holder Events</button>
-<button onclick="showParticipators()" class="btn btn-primary toggle-button">Show Participator Events</button>
+<button id="holdersButton" onclick="toggleButton('holders')" class="btn btn-primary toggle-button inactive-button">Show Holder Events</button>
+<button id="participatorsButton" onclick="toggleButton('participators')" class="btn btn-primary toggle-button inactive-button">Show Participator Events</button>
+
 
 <!-- Holder Events Section -->
 <div id="holder-events" class="container-fluid" style="display: none;">
@@ -85,16 +86,38 @@
 
   
 <script>
-  function showHolders() {
-    document.getElementById('holder-events').style.display = 'block';
-    document.getElementById('participator-events').style.display = 'none';
-  }
+function showHolders() {
+  document.getElementById('holder-events').style.display = 'block';
+  document.getElementById('participator-events').style.display = 'none';
+}
 
-  function showParticipators() {
-    document.getElementById('holder-events').style.display = 'none';
-    document.getElementById('participator-events').style.display = 'block';
-  }
-  window.onload = function() {
+function showParticipators() {
+  document.getElementById('holder-events').style.display = 'none';
+  document.getElementById('participator-events').style.display = 'block';
+}
+
+function toggleButton(buttonType) {
+  if (buttonType === 'holders') {
+    document.getElementById('holdersButton').classList.remove('inactive-button');
+    document.getElementById('holdersButton').classList.add('active-button');
+
+    document.getElementById('participatorsButton').classList.remove('active-button');
+    document.getElementById('participatorsButton').classList.add('inactive-button');
+
     showHolders();
-  };
+  } else if (buttonType === 'participators') {
+    document.getElementById('participatorsButton').classList.remove('inactive-button');
+    document.getElementById('participatorsButton').classList.add('active-button');
+
+    document.getElementById('holdersButton').classList.remove('active-button');
+    document.getElementById('holdersButton').classList.add('inactive-button');
+
+    showParticipators();
+  }
+}
+
+window.onload = function() {
+  toggleButton('holders'); // Default to showing holders and active state on holders button
+};
+
 </script>
