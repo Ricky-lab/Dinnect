@@ -22,23 +22,108 @@
   </div>
 
   <div>
-    <%= form.label :location_name %>
-    <%= form.text_field :location_name %>
-  </div>
+  <%= form.label :status %>
+  <%= form.select :status, Event.statuses.keys %>
+</div>
 
-  <div>
-    <%= form.label :location_coordinates %>
-    <%= form.text_field :location_coordinates %>
-  </div>
+<div>
+<%= form.label :location_name %>
+<%= form.text_field :location_name, id: 'event_location_name' %>
+</div>
 
-  <div>
-    <%= form.label :status %>
-    <%= form.select :status, Event.statuses.keys %>
-  </div>
+<div>
+<%= form.label :location_coordinates %>
+<%= form.text_field :location_coordinates, id: 'event_location_coordinates' %>
+</div>
 
-  <div>
-    <%= form.submit 'Update Event' %>
-  </div>
+  <div id="map" style="height: 400px; width: 100%;"></div>
+
+  <%= form.submit 'Update Event' %>
 <% end %>
 
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', my_events_user_path(current_user) %>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let map;
+  let infowindow;
+  let currentMarker = null; 
+  let geocoder;
+  
+
+  window.initMap = function() {
+    geocoder = new google.maps.Geocoder(); 
+    const columbiaUniversity = { lat: 40.8075, lng: -73.9626 };
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: columbiaUniversity,
+      zoom: 15
+    });
+
+    infowindow = new google.maps.InfoWindow();
+    const service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+      location: columbiaUniversity,
+      radius: 1000,
+      type: ['restaurant']
+    }, processResults);
+
+    map.addListener('click', function(e) {
+      placeMarkerAndPanTo(e.latLng, map);
+    });
+  }
+
+  function processResults(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (let i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+    }
+  }
+
+  function createMarker(place) {
+    const marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
+    });
+  }
+
+  function placeMarkerAndPanTo(latLng, map) {
+    if (currentMarker) {
+      currentMarker.setMap(null);
+    }
+
+    currentMarker = new google.maps.Marker({
+      position: latLng,
+      map: map
+    });
+
+    map.panTo(latLng);
+    getAddress(latLng);
+  }
+
+  function getAddress(latLng) {
+    geocoder.geocode({ 'location': latLng }, function(results, status) {
+      if (status === 'OK') {
+        if (results[0]) {
+          document.getElementById('event_location_name').value = results[0].formatted_address;
+        } else {
+          document.getElementById('event_location_name').value = 'Unknown location';
+        }
+      } else {
+        document.getElementById('event_location_name').value = 'Geocoder failed due to: ' + status;
+      }
+    });
+
+    document.getElementById('event_location_coordinates').value = latLng.toUrlValue();
+  }
+
+
+});
+</script>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&libraries=places&callback=initMap", async: true, defer: true %>

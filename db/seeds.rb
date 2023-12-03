@@ -1,12 +1,17 @@
 # Create Users
 
+# UserEvent.delete_all # or UserEvent.destroy_all if callbacks are needed
+# Event.delete_all # or Event.destroy_all if callbacks are needed
+
+
 test_password = BCrypt::Password.create('123123')
 10.times do |i|
-  User.create!(
-    username: "user#{i}",
-    email: "user#{i}@email.com",
-    password_digest: test_password#
-  )
+  username = "user#{i}"
+  email = "user#{i}@email.com"
+
+  User.find_or_create_by!(username: username, email: email) do |user|
+    user.password_digest = test_password
+  end
 end
 
 # Create Profiles for each User
@@ -40,18 +45,36 @@ User.all.each do |user|
   )
 end
 
-# Track which users are already holders to prevent them from being participants in the same event
-holders = []
 
+# Array of coordinates for different locations within New York City
+ny_locations = [
+  { name: "Times Square", coordinates: "40.7580, -73.9855" },
+  { name: "Lower Manhattan", coordinates: "40.7128, -74.0060" },
+  { name: "Washington Square Park", coordinates: "40.7308, -73.9973" },
+  { name: "Empire State Building", coordinates: "40.7484, -73.9857" },
+  { name: "Central Park", coordinates: "40.7829, -73.9654" },
+  { name: "Wall Street", coordinates: "40.7061, -74.0092" },
+  { name: "Chelsea Market", coordinates: "40.7480, -74.0048" },
+  { name: "Roosevelt Island", coordinates: "40.7489, -73.9680" },
+  { name: "Madison Square Park", coordinates: "40.7411, -73.9897" },
+  { name: "Long Island City", coordinates: "40.7306, -73.9352" }
+]
+
+# Track which users are already holders to prevent them from being participants in the same event
+
+
+holders = []
 users = User.all.to_a
+
 5.times do |i|
+  location = ny_locations[i % ny_locations.length]
   event = Event.create!(
     title: "Event #{i}",
     description: "Description for event #{i}.",
     start_time: Time.now + (i*2).hours,
     duration: 2,
-    location_name: "Location #{i}",
-    location_coordinates: "40.7128° N, 74.0060° W",
+    location_name: location[:name],
+    location_coordinates: location[:coordinates],
     status: "active"
   )
 
