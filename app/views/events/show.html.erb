@@ -61,3 +61,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&callback=initMap", async: true, defer: true %>
 
+
+<div id="map" style="height: 400px; width: 100%;"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let map;
+
+  window.initMap = function() {
+    const eventCoordinates = getEventCoordinates();
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: eventCoordinates,
+      zoom: 15
+    });
+
+    new google.maps.Marker({
+      position: eventCoordinates,
+      map: map
+    });
+  };
+
+  function getEventCoordinates() {
+    // Parse coordinates from @event.location_coordinates
+    const coords = "<%= @event.location_coordinates %>".split(",");
+    return new google.maps.LatLng(parseFloat(coords[0]), parseFloat(coords[1]));
+  }
+});
+</script>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&callback=initMap", async: true, defer: true %>
+
