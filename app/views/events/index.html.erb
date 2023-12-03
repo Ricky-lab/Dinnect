@@ -6,20 +6,19 @@
   <title>All Events</title>
   <%= stylesheet_link_tag 'event', media: 'all' %>
   <style>
-    /* 附加样式以减少卡片间距 */
     .card-custom {
-      max-width: 100%; /* 使卡片更长 */
-      margin: 10px; /* 减少卡片间距 */
+      max-width: 100%;
+      margin: 10px;
     }
 
-    .container-fluid {
-      padding-right: 15px; /* 减少容器的左右内边距 */
-      padding-left: 15px;
-    }
+    .container-fluid1 {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
     .card-img-custom {
-      width: 100%; /* 设置图片宽度以填满容器 */
-      height: auto; /* 保持图片的纵横比 */
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
@@ -28,7 +27,7 @@
     <%= link_to 'My Profile', user_path(current_user), class: 'btn btn-info profile-button' %>
   </div>
 
-  <div class="container-fluid">
+  <div class="container-fluid1">
     <div class="row">
       <% @user_events_by_event_id.each do |event_id, user_events| %>
         <div class="col-md-12">
@@ -42,16 +41,16 @@
                   <%= link_to user_events.first.event.title, event_path(user_events.first.event) %>
                 </h5>
                 <p class="card-text">
-                  Hosted by: <%= user_events.first.user.profile.first_name %> <%= user_events.first.user.profile.last_name %> <!-- 显示持有者的名字 -->
+                  Hosted by: <%= user_events.first.user.profile.first_name %> <%= user_events.first.user.profile.last_name %> 
                 </p>
                 <p class="card-text">
-                  When: <%= user_events.first.event.start_time.strftime("%A, %d %b %Y %l:%M %p") %> <!-- 格式化时间 -->
+                  When: <%= user_events.first.event.start_time.strftime("%A, %d %b %Y %l:%M %p") %> 
                 </p>
                 <p class="card-text">
-                  Where: <%= user_events.first.event.location_name %> <!-- 假设 'location' 是事件的一个属性 -->
+                  Where: <%= user_events.first.event.location_name %>
                 </p>
                 <p class="card-text">
-                  Status: <%= user_events.first.event.status %> <!-- 假设 'status' 是事件的一个属性 -->
+                  Status: <%= user_events.first.event.status %> 
                 </p>
                 <p class="card-text">
                   <small class="text-muted">
@@ -67,7 +66,7 @@
   </div>
 
   <div style="position: fixed; bottom: 20px; right: 20px;">
-    <%= link_to 'New Event', new_event_path, class: 'btn btn-new-event' %> <!-- mb-2 为按钮添加一些底部外边距 -->
+    <%= link_to 'New Event', new_event_path, class: 'btn btn-new-event' %> 
     <%= link_to 'My Events', my_events_user_path(current_user), class: 'btn btn-primary' %>
   </div>
 </body>

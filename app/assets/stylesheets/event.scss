@@ -103,10 +103,10 @@
 }
 
 .card-deck .card {
-  margin-right: 15px; /* 调整为期望的间距大小 */
-  margin-left: 15px; /* 调整为期望的间距大小 */
+  margin-right: 15px; 
+  margin-left: 15px; 
 }
-/* 如果您想减少卡片与屏幕边缘的空白 */
+
 .container-fluid {
   padding-right: 0;
   padding-left: 0;
@@ -122,5 +122,31 @@
   color: white;
 }
 
+.event-actions {
+  margin-bottom: 20px;
+}
 
+.btn {
+  margin-right: 10px;
+}
 
+/* Adjust colors based on your preference */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
