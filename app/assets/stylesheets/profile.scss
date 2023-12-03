@@ -1,166 +1,175 @@
 /* app/assets/stylesheets/application.css */
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Navbar styles */
-  .navbar {
-    //background-color: #3498db;
-    padding: 15px 0;
-  }
-  
-  .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff; /* Text color for the brand */
-  }
-  
-  .navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-item {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  /* Add a border to separate the nav items */
-  .nav-item:not(:last-child) {
-    border-right: 2px solid #fff;
-    padding-right: 20px;
-    margin-right: 0;
-  }
-  
-  /* Styling for the welcome message */
-  .nav-item.welcome {
-    font-weight: bold;
-    color: #333; /* Text color for the welcome message */
-  }
-  
-  /* Header styles */
-  header {
-    text-align: center;
-    background-color: #f5f5f5;
-    padding: 20px 0;
-  }
-  
-  /* Page content styles */
-  .container {
-    padding: 20px;
-  }
-  
-  /* Additional styling for links */
-  .nav-link {
-    color: #3498db;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Styling for logout link */
-  .nav-link.logout {
-    background-color: #e74c3c; /* Red color for logout link */
-  }
-  
-  /* Hover effect for links */
-  .nav-link:hover {
-    background-color: #2980b9; /* Darker blue on hover */
-  }
-  
-  /* Styling for user profile container */
-  .user-profile {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  /* Styling for welcome message */
-  .welcome-message {
-    margin-bottom: 20px;
-    color: #fff; /* Change the text color to white */
-  }
-  
-  /* Styling for username in the welcome message */
-  .username {
-    font-weight: bold;
-    //color: #3498db;
-  }
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Styling for the Events button*/
-  .events-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  /* app/assets/stylesheets/users.css */
-  .return-to-all-events {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-  }
+/* Navbar styles */
+.navbar {
+  background-color: #3498db;
+  padding: 15px 0;
+}
 
-  .profile-button {
-    position: absolute;
-    top: 25px;
-    right: 20px;
-  }
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* Text color for the brand */
+}
 
-  .btn-primary {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .profile-button {
-    background-color: #fff;
-    color: #3498db;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  .event-button {
-    background-color: #fff;
-    color: #3498db;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .container {
-    max-width: 600px; 
-    margin: auto; 
-  }
-  
-  .display-4 {
-    text-align: center; 
-    margin-bottom: 20px; 
-  }
-  
-  .form-group {
-    margin-bottom: 15px; 
-  }
-  
-  .btn-lg {
-    padding: 10px 30px; 
-  }
-  
+.nav-item {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Add a border to separate the nav items */
+.nav-item:not(:last-child) {
+  border-right: 2px solid #fff;
+  padding-right: 20px;
+  margin-right: 0;
+}
+
+/* Styling for the welcome message */
+.nav-item.welcome {
+  font-weight: bold;
+  color: #333; /* Text color for the welcome message */
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px 0;
+}
+
+/* Page content styles */
+.container {
+  padding: 20px;
+}
+
+/* Additional styling for links */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for logout link */
+.nav-link.logout {
+  background-color: #e74c3c; /* Red color for logout link */
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Styling for user profile container */
+.user-profile {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Styling for welcome message */
+.welcome-message {
+  margin-bottom: 20px;
+  color: #fff; /* Change the text color to white */
+}
+
+/* Styling for username in the welcome message */
+.username {
+  font-weight: bold;
+  color: #3498db;
+}
+
+/* Styling for the Events button*/
+.events-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* app/assets/stylesheets/users.css */
+.return-to-all-events {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.profile-button {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-back {
+  background-color: #303132;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-button {
+  background-color: #fff;
+  color: #3498db;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.event-button {
+  background-color: #fff;
+  color: #3498db;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 600px; 
+  margin: auto; 
+}
+
+.display-4 {
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+
+.form-group {
+  margin-bottom: 15px; 
+}
+
+.btn-lg {
+  padding: 10px 30px; 
+}

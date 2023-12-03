@@ -17,32 +17,33 @@
 
     <header name="top">
 
-      <nav class="navbar navbar-default navbar-fixed-top nav-color" role="navigation" id="nav">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header nav-color">
-            
-            <ul class="nav navbar-nav navbar-right custom">
-              <% if current_user %>
-              <li class="nav-item">
-              <span class="welcome-message"> Welcome, <%= current_user.username %>!</span>
-              </li>
-              <li class="nav-item">
-                <%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
-              </li>
-            <% end %>
-            </ul>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse nav-submenu-color collapse" id="bs-navbar-collapse-1">
-            
-          </div>
-          <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-->
-      </nav>
-    </header>
+    <nav class="custom-navbar navbar custom-nav-color" role="navigation" id="custom-nav">
+    <div class="custom-container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="custom-navbar-header custom-nav-color">
+      <ul class="nav navbar-nav navbar-right custom custom-nav">
+      <% if current_user %>
+        <li class="custom-nav-item">
+          <%= link_to 'Logout', logout_path, method: :delete, class: 'btn custom-nav-link' %>
+        </li>
+        <% else %>
+        <li class="custom-nav-item">
+        <%= link_to 'Dinnect','/', class: 'btn custom-nav-link' %>
+      </li>
+      <% end %>
+    </ul>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="custom-collapse navbar-collapse custom-nav-submenu-color collapse" id="custom-bs-navbar-collapse-1">
+        <!-- Additional content goes here -->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.custom-container -->
+  </nav>
+  </header>
+  
 
     <% if flash[:success] %>
       <div class="alert alert-success">

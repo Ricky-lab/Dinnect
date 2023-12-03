@@ -1,47 +1,53 @@
-<%= form_with(model: @event, local: true) do |form| %>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
+<div class="container mt-4">
+ <h1 class="text-center mb-4">Create Your Event</h1>
+  <%= form_with(model: @event, local: true) do |form| %>
+    <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control', placeholder: 'Enter event title', required: true %>
+  </div>
   
-    <div>
-      <%= form.label :description %>
-      <%= form.text_area :description %>
-    </div>
+  <div class="mb-3">
+    <%= form.label :description, class: 'form-label' %>
+    <%= form.text_area :description, class: 'form-control', placeholder: 'Enter event description' %>
+  </div>
   
-    <div>
-      <%= form.label :start_time %>
-      <%= form.datetime_local_field :start_time %>
-    </div>
+  <div class="mb-3">
+    <%= form.label :start_time, class: 'form-label' %>
+    <%= form.datetime_local_field :start_time, class: 'form-control', required: true %>
+  </div>
   
-    <div>
-      <%= form.label :duration %>
-      <%= form.number_field :duration %>
-    </div>
+  <div class="mb-3">
+    <%= form.label :duration, class: 'form-label' %>
+    <%= form.number_field :duration, class: 'form-control', placeholder: 'Enter event duration (in hours)' %>
+  </div>
   
-    <div>
-      <%= form.label :location_name %>
-      <%= form.text_field :location_name, id: 'event_location_name' %>
-    </div>
-
-    <div>
-      <%= form.label :location_coordinates %>
-      <%= form.text_field :location_coordinates, id: 'event_location_coordinates' %>
-    </div>
+  <div class="mb-3">
+    <%= form.label :status, class: 'form-label' %>
+    <%= form.select :status, Event.statuses.keys, { prompt: 'Select event status' }, class: 'form-select' %>
+  </div>
   
-    <div>
-      <%= form.label :status %>
-      <%= form.select :status, Event.statuses.keys %>
-    </div>
+  <div class="mb-3">
+    <%= form.label :location_name, class: 'form-label' %>
+    <%= form.text_field :location_name, id: 'event_location_name', class: 'form-control', placeholder: 'Enter location name' %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label :location_coordinates, class: 'form-label' %>
+    <%= form.text_field :location_coordinates, id: 'event_location_coordinates', class: 'form-control', placeholder: 'Enter location coordinates' %>
+  </div>
+  
+  
 
     <div id="map" style="height: 400px; width: 100%;"></div>
 
 
-<%= form.submit 'Create Event' %>
+  <%= form.submit 'Create Event', class: 'btn btn-primary' %>
 <% end %>
 
-<%= link_to 'Back', events_path %>
 
+
+<%= link_to 'Back', events_path, class: 'btn btn-secondary' %>
+</div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   let map;

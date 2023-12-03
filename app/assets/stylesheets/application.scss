@@ -1,22 +1,9 @@
-/* app/assets/stylesheets/application.css */
-// @import "bootstrap-sprockets";
-
 @import "bootstrap";
 
 @import "auth";
 @import "event";
 @import "profile";
 @import "sessions";
-
-
-header[name="top"] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px; /* Adjust the height based on your design */
-  width: 100%; /* Set the width to 100% */
-}
-
 
 body {
   font-family: 'Arial', sans-serif;
@@ -28,7 +15,10 @@ body {
 /* Navbar styles */
 .navbar {
   background-color: #3498db;
-  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //padding: 15px 0;
 }
 
 .navbar-brand {
@@ -61,6 +51,12 @@ body {
   color: #333; /* Text color for the welcome message */
 }
 
+/* Header styles */
+header {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px 0;
+}
 
 /* Page content styles */
 .container {
@@ -69,7 +65,7 @@ body {
 
 /* Additional styling for links */
 .nav-link {
-  color: #3498db;
+  color: #fff;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -84,11 +80,6 @@ body {
 /* Hover effect for links */
 .nav-link:hover {
   background-color: #2980b9; /* Darker blue on hover */
-}
-
-/* Display the logout button on the right */
-.navbar-nav.ml-auto {
-  margin-left: auto;
 }
 
 /* Styling for user profile container */
@@ -114,4 +105,68 @@ body {
   color: #3498db;
 }
 
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //height: 100vh; /* Optionally, set a height to center vertically within the viewport */
+}
 
+.centered-item {
+  text-align: center;
+}
+
+.custom-navbar {
+  background-color: #3498db; /* Replace with your desired background color */
+}
+
+.custom-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  height: 100%; /* Ensure the container takes up the full height */
+}
+
+.custom-navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.custom-nav {
+  list-style: none;
+  display: flex;
+  margin: 0; /* Remove default margin to center vertically */
+  padding: 0; /* Remove default padding */
+}
+
+.custom-nav-item {
+  margin-right: 10px;
+}
+
+.custom-welcome-message {
+  color: #fff; /* Adjust the color based on your design */
+}
+
+.custom-nav-link {
+  color: #fff; /* Adjust the color based on your design */
+}
+
+.logout-button {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+}
+
+.logout-button {
+  background-color: #fff;
+  color: #3498db;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
