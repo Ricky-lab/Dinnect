@@ -11,12 +11,13 @@ Dinnect::Application.routes.draw do
 
   resources :profiles
 
-  resources :events, only: [:index,:create,:new,:show,:edit,:update]  
-  resources :events do
+  resources :events, only: [:index, :create, :new, :show, :edit, :update] do
     post 'join', on: :member
     delete 'leave', on: :member
     patch 'cancel', on: :member
+    delete 'remove_participant/:user_id', to: 'events#remove_participant', on: :member, as: 'remove_participant'
   end
+  
 
   # Inside config/routes.rb
   # get 'users/:id/my_events', to: 'users#my_events', as: 'user_events'

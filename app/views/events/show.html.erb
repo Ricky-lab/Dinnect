@@ -9,7 +9,10 @@
 <h5>Participants:</h5>
 <% @user_events_participators.each do |user_event| %>
   <p><%= user_event.user.profile.first_name %> <%= user_event.user.profile.last_name %>
-  <%= user_event.user.profile.class_name %>-<%= user_event.user.profile.school %>-<%= user_event.user.profile.major %></p>
+  <%= user_event.user.profile.class_name %>-<%= user_event.user.profile.school %>-<%= user_event.user.profile.major %>
+  <% if current_user.hold_event?(@event)  %>
+  <%= link_to "Remove Participant", remove_participant_event_path(@event, user_id: user_event.user.id), method: :delete, data: { confirm: 'Are you sure you want to remove this participant?' },class: 'btn btn-danger'  %>
+  <%end%></p>
   <!-- Display other participant information as needed -->
 <% end %>
 
