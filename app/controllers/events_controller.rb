@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @user_events_by_event_id = UserEvent.where(role: "holder").includes(:user).group_by(&:event_id)
+    @user_events_participators = UserEvent.where(event: @event, role: "participator").includes(:user)
   end
 
   def new

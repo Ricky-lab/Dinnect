@@ -8,6 +8,16 @@
 @import "profile";
 @import "sessions";
 
+
+header[name="top"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px; /* Adjust the height based on your design */
+  width: 100%; /* Set the width to 100% */
+}
+
+
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
@@ -51,12 +61,6 @@ body {
   color: #333; /* Text color for the welcome message */
 }
 
-/* Header styles */
-header {
-  text-align: center;
-  background-color: #f5f5f5;
-  padding: 20px 0;
-}
 
 /* Page content styles */
 .container {
@@ -65,7 +69,7 @@ header {
 
 /* Additional styling for links */
 .nav-link {
-  color: #fff;
+  color: #3498db;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -80,6 +84,11 @@ header {
 /* Hover effect for links */
 .nav-link:hover {
   background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Display the logout button on the right */
+.navbar-nav.ml-auto {
+  margin-left: auto;
 }
 
 /* Styling for user profile container */

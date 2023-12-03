@@ -6,17 +6,28 @@
 <p><strong>Location Name:</strong> <%= @event.location_name %></p>
 <p><strong>Location Coordinates:</strong> <%= @event.location_coordinates %></p>
 <p><strong>Status:</strong> <%= @event.status %></p>
+<h5>Participants:</h5>
+<% @user_events_participators.each do |user_event| %>
+  <p><%= user_event.user.profile.first_name %> <%= user_event.user.profile.last_name %>
+  <%= user_event.user.profile.class_name %>-<%= user_event.user.profile.school %>-<%= user_event.user.profile.major %></p>
+  <!-- Display other participant information as needed -->
+<% end %>
 
 <% if current_user %>
-  <% if @event.active?&&!current_user.joined_event?(@event)&&!current_user.hold_event?(@event)  %>
-    <%= link_to 'Join Event', join_event_path(@event), method: :post %>
-  <% end %>
-  <% if @event.active?&&current_user.joined_event?(@event)&&!current_user.hold_event?(@event)  %>
-    <%= link_to 'Leave Event', leave_event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  <% if @event.active?&&!current_user.joined_event?(@event)&&current_user.hold_event?(@event)  %>
-  <%= link_to 'Cancel Event', cancel_event_path(@event), method: :patch, data: { confirm: 'Are you sure?' } %>
+  <div class="event-actions">
+    <% if @event.active? && !current_user.joined_event?(@event) && !current_user.hold_event?(@event)  %>
+      <%= link_to 'Join Event', join_event_path(@event), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+
+    <% if @event.active? && current_user.joined_event?(@event) && !current_user.hold_event?(@event)  %>
+      <%= link_to 'Leave Event', leave_event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <% end %>
+
+    <% if @event.active? && !current_user.joined_event?(@event) && current_user.hold_event?(@event)  %>
+      <%= link_to 'Cancel Event', cancel_event_path(@event), method: :patch, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
+    <% end %>
+  </div>
 <% end %>
-<% end %>
-<%= link_to 'Back', events_path %>
+
+<%= link_to 'Back', events_path, class: 'btn btn-secondary' %>
 
