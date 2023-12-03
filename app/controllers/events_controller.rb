@@ -11,6 +11,22 @@ class EventsController < ApplicationController
     @user_events_participators = UserEvent.where(event: @event, role: "participator").includes(:user)
   end
 
+  def remove_participant
+    @event = Event.find(params[:id])
+    @participant = User.find(params[:user_id])
+
+    if @event && @participant
+      if current_user.hold_event?(@event) # Check if the current user is the event holder
+        @event.user_events.find_by(user: @participant, role: "participator")&.destroy
+        redirect_to @event, notice: 'Participant removed from the event.'
+      else
+        redirect_to @event, alert: 'You do not have permission to remove a participant from this event.'
+      end
+    else
+      redirect_to events_path, alert: 'Event or participant not found.'
+    end
+  end
+
   def new
     @event = Event.new
   end
