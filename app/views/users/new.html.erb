@@ -7,9 +7,11 @@
   <title>User Registration</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <%= stylesheet_link_tag 'auth', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- Add any additional stylesheet links here -->
 </head>
 <body>
+
   <% if @user.errors.any? %>
     <div class="alert alert-danger">
       <ul>
@@ -25,32 +27,57 @@
     </div>
   <% end %>
 
-  <div class="registration-form">
-    <h1>Sign Up</h1>
-
-    <%= form_for @user, url: signup_path do |f| %>
-      <div class="form-group">
-        <%= f.label :username %>
-        <%= f.text_field :username, class: 'form-control', required: true %>
+<section class="">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="my-5 display-3 fw-bold" style="font-size: 3rem; letter-spacing: -4px; color: #343a40;"> <!-- Darker color for elegance -->
+          Savor the Moments,</br>
+           <span class="text-primary">
+              Cherish the Company.
+            </span>
+        </h1>
+        <p style="color: hsl(217, 10%, 33%); font-size: 1.1rem; font-weight: 300; max-width: 480px; margin-top: 2rem;"> <!-- Darker shade and lighter weight for the paragraph -->
+          Discover the art of fine dining and the joy of connecting with others. 
+          Dinnect brings you an exclusive platform where every meal becomes a cherished memory, 
+          and every encounter is an exquisite blend of flavors and friendship.
+        </p>
+        
       </div>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control', required: true %>
-      </div>
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <%= form_for @user, url: users_path, method: :post, html: { class: 'form' } do |f| %>
+                
+                <!-- Username input -->
+                <div class="form-outline mb-4">
+                  <%= f.text_field :username, id: 'form3Example1', class: 'form-control', placeholder: 'Username', required: true %>
+                </div>
 
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control', required: true %>
-      </div>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <%= f.email_field :email, id: 'form3Example3', class: 'form-control', placeholder: 'Email address', required: true %>
+                </div>
 
-      <div class="form-actions">
-        <%= f.submit 'Sign Up', class: 'btn btn-primary' %>
-      </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <%= f.password_field :password, id: 'form3Example4', class: 'form-control', placeholder: 'Password', required: true %>
+                </div>
 
-    <% end %>
+                <!-- Submit button -->
+                <%= f.submit 'Sign up', class: 'btn btn-primary btn-block', style: 'width: 100%;' %>
+
+                <!-- ...Social media or other register buttons... -->
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- Jumbotron -->
+</section>
 
-  <!-- Add your additional scripts or footer content here -->
-</body>
-</html>
