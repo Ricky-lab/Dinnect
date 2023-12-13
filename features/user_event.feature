@@ -14,7 +14,7 @@ Background: Existing Users and Logged In
   And I fill in "Password" with "Vegetarian"
   And I press "Sign Up"
   Given I am on the Log in page
-  And I fill in "Username or email" with "al1234"
+  And I fill in "Username or Email Address" with "al1234"
   And I fill in "Password" with "Vegetarian"
   And I press "Log In"
   Then I should be on the User page for "al1234"

@@ -6,38 +6,36 @@ Feature: Dinnect - Login Process
 Background: Users on Dinnect platform
   Given the following users exist:
     | email             | username | password     |
-    | alice@columbia.edu| al1234   | Vegetarian   |
-    | bob@columbia.edu  | bo1234   | Gluten-Free  |
+    | alice@email.edu| al1234   | Vegetarian   |
+    | bob@email.edu  | bo1234   | Gluten-Free  |
 
-Scenario: Login to Dinnect with username and then logout
-  When I go to the Registration page
-  And I fill in "Username" with "uncch"
-  And I fill in "Email" with "uncch@unc.edu"
-  And I fill in "Password" with "igraduatedfromuncch23"
-  And I press "Sign Up"
-  Given I am on the Log in page
-  And I fill in "Username or email" with "uncch"
-  And I fill in "Password" with "igraduatedfromuncch23"
+Scenario: Login to Dinnect with username and then logout 
+  When I go to the Log in page
+  And I fill in "Username or Email Address" with "al1234"
+  And I fill in "Password" with "Vegetarian"
   And I press "Log In"
-  Then I should be on the User page for "uncch"
-  Then I should see "Welcome, uncch!"
+  Then I should be on the User page for "al1234"
+  Then I should see "User Profile"
   And I follow "Logout"
   Then I should be logged out
   Then I go to the Home page
   
 
-Scenario: Login to Dinnect with email
+Scenario: Login to Dinnect with email then logout 
   When I go to the Registration page
   And I fill in "Username" with "uncch"
   And I fill in "Email" with "uncch@unc.edu"
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Sign Up"
   Given I am on the Log in page
-  And I fill in "Username or email" with "uncch@unc.edu"
+  And I fill in "Username or Email Address" with "uncch@unc.edu"
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Log In"
   Then I should be on the User page for "uncch"
-  Then I should see "Welcome, uncch!"
+  Then I should see "User Profile"
+  And I follow "Logout"
+  Then I should be logged out
+  Then I go to the Home page
 
 
 Scenario: Login to Dinnect with wrong pwd 
@@ -47,15 +45,16 @@ Scenario: Login to Dinnect with wrong pwd
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Sign Up"
   Given I am on the Log in page
-  And I fill in "Username or email" with "uncch@unc.edu"
+  And I fill in "Username or Email Address" with "uncch@unc.edu"
   And I fill in "Password" with "igraduatedfromduke"
   And I press "Log In"
   Then I should be on the Log in page
-  And I fill in "Username or email" with "uncch@unc.edu"
+  Then I should see "Invalid username/email and password combination"
+  And I fill in "Username or Email Address" with "uncch@unc.edu"
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Log In"
   Then I should be on the User page for "uncch"
-  Then I should see "Welcome, uncch!"
+  Then I should see "User Profile"
 
 Scenario: Login to Dinnect with wrong email 
   When I go to the Registration page
@@ -64,29 +63,29 @@ Scenario: Login to Dinnect with wrong email
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Sign Up"
   Given I am on the Log in page
-  And I fill in "Username or email" with "uncch@duke.edu"
+  And I fill in "Username or Email Address" with "uncch@duke.edu"
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Log In"
-  Then I should be on the Log in page
-  And I fill in "Username or email" with "uncch@unc.edu"
+  Then I should be on the Log in page and see "Invalid username/email and password combination"
+  And I fill in "Username or Email Address" with "uncch@unc.edu"
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Log In"
   Then I should be on the User page for "uncch"
-  Then I should see "Welcome, uncch!"
+  Then I should see "User Profile"
 
-Scenario: Login to Dinnect with wrong email 
+Scenario: Login to Dinnect with wrong username
   When I go to the Registration page
   And I fill in "Username" with "uncch"
   And I fill in "Email" with "uncch@unc.edu"
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Sign Up"
   Given I am on the Log in page
-  And I fill in "Username or email" with "duke"
+  And I fill in "Username or Email Address" with "duke"
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Log In"
-  Then I should be on the Log in page
-  And I fill in "Username or email" with "uncch@unc.edu"
+  Then I should be on the Log in page and see "Invalid username/email and password combination"
+  And I fill in "Username or Email Address" with "uncch@unc.edu"
   And I fill in "Password" with "igraduatedfromuncch23"
   And I press "Log In"
   Then I should be on the User page for "uncch"
-  Then I should see "Welcome, uncch!"
+  Then I should see "User Profile"
