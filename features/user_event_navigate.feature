@@ -6,19 +6,14 @@ Feature: Dinnect - User Event Management
 Background: Existing Users and Logged In
   Given the following users exist:
     | email             | username | password     |
-    | alice@columbia.edu| al1234   | Vegetarian   |
-    | bob@columbia.edu  | bo1234   | Gluten-Free  |
-  When I go to the Registration page
-  And I fill in "Username" with "al1234"
-  And I fill in "Email" with "alice@columbia.edu"
-  And I fill in "Password" with "Vegetarian"
-  And I press "Sign Up"
+    | alice@columbia.edu| al1234   | 123123   |
+    | bob@columbia.edu  | bo1234   | 123123  |
+
   Given I am on the Log in page
   And I fill in "Username or Email Address" with "al1234"
-  And I fill in "Password" with "Vegetarian"
-  And I press "Log In"
+  And I fill in "Password" with "123123"
+  And I press "Login"
   Then I should be on the User page for "al1234"
-  Then I should see "Welcome, al1234!"
 
 Scenario: Navigating to All Events page from Profile page
   When I go to the User page for "al1234"
@@ -39,17 +34,14 @@ Scenario: Navigating to Profile from All Events
   And I should see "User Profile"
 
 Scenario: Navigating to Profile from My Events
-  When I go to the All Events page 
+  When I go to the My Events page for 'al1234'
   When I follow "My Profile"
   Then I should be on the User page for "al1234"
   And I should see "User Profile"
 
-Scenario: Viewing Holder Events
-  When I go to the All Events page 
-  When I follow "My Profile"
-  Then I should be on the User page for "al1234"
+Scenario: Navigating to All Events from My Events
+  When I go to the My Events page for 'al1234'
+  When I follow "All Events"
+  Then I should be on the All Events page
+  And I should see "All Events"
 
-Scenario: Viewing Participator Events
-  When I go to the All Events page 
-  When I follow "My Profile"
-  Then I should be on the User page for "al1234"
