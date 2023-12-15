@@ -42,9 +42,61 @@ Scenario: Create a New Event
   Then I should be on the All Events page
   And I should see "active"
 
-  
-Scenario: Edit the Event
+
+Scenario: Edit the Event and save the edit
   When I go to the My Events page for 'al1234'
   Then I should see "My Events"
+  And I follow "New Event"
+  Then I should be on the New Event page
+  And I fill in "Title" with "event test 111"
+  And I fill in "Description" with "description"
+  And I fill in "Start time" with "12/14/2023, 03:51 PM"
+  And I fill in "Duration" with "1"
+  And I select "active" from "Status"
+  And I fill in "Location name" with "550 W 120th St, New York, NY 10027, USA"
+  And I fill in "Location coordinates" with "40.80754,-73.962579"
+  And I press "Create Event"
+  Then I should be on the All Events page
+  And I should see "active"
+
+  When I go to the My Events page for 'al1234'
+  When I press "Show Holder Events"
+  When I press "Edit"
+  Then I should see "Edit Your Event"
+  And I select "full" from "Status"
+  When I press "Update Event"
+  And I press "All Events"
+  Then I should see "full"
+
+
+
+Scenario: Edit the Event but not save
+  When I go to the My Events page for 'al1234'
+  Then I should see "My Events"
+  And I follow "New Event"
+  Then I should be on the New Event page
+  And I fill in "Title" with "event test 123"
+  And I fill in "Description" with "description"
+  And I fill in "Start time" with "12/14/2023, 03:51 PM"
+  And I fill in "Duration" with "1"
+  And I select "active" from "Status"
+  And I fill in "Location name" with "550 W 120th St, New York, NY 10027, USA"
+  And I fill in "Location coordinates" with "40.80754,-73.962579"
+  And I press "Create Event"
+  Then I should be on the All Events page
+  And I should see "active"
+
+  When I go to the My Events page for 'al1234'
+  When I press "Show Holder Events"
+
+  When I go to the My Events page for 'al1234'
+  When I press "Show Holder Events"
+  When I press "Edit"
+  Then I should see "Edit Your Event"
+  And I select "full" from "Status"
+  When I press "Back"
+  And I press "All Events"
+  Then I should see "active"
+
 
 
