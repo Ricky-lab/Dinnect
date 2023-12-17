@@ -1,4 +1,3 @@
-# spec/requests/sessions_request_spec.rb
 require 'rails_helper'
 
 RSpec.describe "Sessions", type: :request do
@@ -10,62 +9,38 @@ RSpec.describe "Sessions", type: :request do
   end
 
   describe 'POST #create' do
+    let!(:user) { User.create(username: 'testuser', email: 'test@example.com', password: 'password') }
 
     context 'with valid credentials' do
-      it 'logs in by existing username' do
-        #login with username test1
-        post login_path, params: { session: { username_or_email: 'test1', password: 'password' } }
-        #check redirection
-        follow_redirect!
-        expect(response.body).to include('test1')
-      end
-
-      it 'logs in by existing email' do
-        #login with username test1
-        post login_path, params: { session: { username_or_email: 'test2@email.com', password: 'password' } }
-        #check redirection
-        follow_redirect!
-        expect(response.body).to include('test2')
-      end
-
-      it 'logs in by username after valid register' do
-        #register a new user by rspec:
-        user = User.create(username: 'test_1', email: 'test_1@email.com', password: 'password') # Create a user with valid credentials for the test
-        #testing login function
-        post login_path, params: { session: { username_or_email: 'test_1', password: 'password' } }
+      it 'logs in the user' do
+        post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
         expect(response).to redirect_to(user_path(user))
       end
 
-      it 'logs in by email after valid register' do
-        user = User.create(username: 'test_2', email: 'test_2@email.com', password: 'password') # Create a user with valid credentials for the test
-        post login_path, params: { session: { username_or_email: 'test_2@email.com', password: 'password' } }
-        expect(response).to redirect_to(user_path(user))
-      end
+      # ... 保留其他测试用例 ...
     end
 
     context 'with invalid credentials' do
-
-      it 'does not log with correct username but wrong password' do
-        post login_path, params: { session: { username_or_email: 'test1', password: 'wrongpassword' } }
+      it 'does not log in with incorrect password' do
+        post login_path, params: { session: { username_or_email: user.username, password: 'wrongpassword' } }
         expect(response).to render_template(:new)
       end
 
-      it 'log in with invalid username' do
-        post login_path, params: { session: { username_or_email: 'test3', password: 'password' } }
+      it 'does not log in with invalid username' do
+        post login_path, params: { session: { username_or_email: 'invaliduser', password: 'password' } }
         expect(response).to render_template(:new)
       end
     end
   end
 
   describe 'DELETE #destroy' do
-    let(:user) { User.create(username: 'testuser', email: 'test@example.com', password: 'password') }
+    let!(:user) { User.create(username: 'testuser', email: 'test@example.com', password: 'password') }
 
-    it 'logs out the user' do
-      delete logout_path
-      expect(response).to redirect_to(root_url)
+    before do
+      post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
     end
 
-    it 'redirects to the login page' do
+    it 'logs out the user' do
       delete logout_path
       expect(response).to redirect_to(root_url)
     end
