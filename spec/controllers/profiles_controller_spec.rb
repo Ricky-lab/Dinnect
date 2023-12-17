@@ -27,8 +27,8 @@ RSpec.describe "Profiles", type: :request do
 
   before do
     post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
-    session[:user_id] = user.id  # 模拟用户登录
-    user.profile&.destroy       # 确保用户没有现有的资料
+    session[:user_id] = user.id  
+    user.profile&.destroy       
   end
 
   describe 'POST /profiles' do
@@ -48,25 +48,23 @@ RSpec.describe "Profiles", type: :request do
         end
       end
     end
-    # 测试 GET /profiles/:id/edit
-# ...之前的代码
-
+   
 
   
-  # 测试 PUT /profiles/:id
+  # test PUT /profiles/:id
   describe 'PUT /profiles/:id' do
     let!(:profile) { Profile.create!(valid_attributes.merge(user: user)) }
     let(:new_attributes) { { first_name: 'John' } }
   
     it 'updates the requested profile' do
-      session[:user_id] = user.id  # 确保测试用户是Profile的所有者
+      session[:user_id] = user.id  
       put profile_path(profile), params: { profile: new_attributes }
-      profile.reload  # 重新加载profile以获取更新后的数据
+      profile.reload  
       expect(profile.first_name).to eq('John')
     end
   end
   
-# 测试 GET /profiles/:id/edit
+# test GET /profiles/:id/edit
 describe 'GET /profiles/:id/edit' do
     let!(:profile) { Profile.create!(valid_attributes.merge(user: user)) }
   
@@ -77,7 +75,7 @@ describe 'GET /profiles/:id/edit' do
     end
   end
   
-  # 测试 GET /profiles/:id
+  # test GET /profiles/:id
   describe 'GET /profiles/:id' do
     let!(:profile) { Profile.create!(valid_attributes.merge(user: user)) }
   
@@ -88,7 +86,7 @@ describe 'GET /profiles/:id/edit' do
     end
   end
 
-  # 测试 GET /profiles/new
+  # test GET /profiles/new
 describe 'GET /profiles/new' do
     context 'when the user does not have a profile' do
       it 'renders the new template' do
@@ -114,7 +112,7 @@ describe 'GET /profiles/new' do
   
     it 'does not update the profile and redirects' do
       put profile_path(profile), params: { profile: invalid_attributes }
-      expect(response).to have_http_status(:found)  # 检查状态码是否为302（Found）
+      expect(response).to have_http_status(:found)  
       
     end
   end
@@ -126,7 +124,7 @@ describe 'GET /profiles/new' do
   
       it 'redirects due to lack of permissions' do
         get edit_profile_path(profile)
-        expect(response).to redirect_to(root_path)  # 假设无权限时重定向到根路径
+        expect(response).to redirect_to(root_path)  
       end
     end
   end
@@ -138,7 +136,7 @@ describe 'GET /profiles/new' do
       it 'redirects to the login page' do
         session[:user_id] = nil
         get profile_path(profile)
-        expect(response).to redirect_to(root_path)  # 未登录时重定向到登录页
+        expect(response).to redirect_to(root_path)  
       end
     end
   end
@@ -147,7 +145,7 @@ describe 'GET /profiles/new' do
     context 'when the profile does not exist' do
       it 'handles the missing profile' do
         get profile_path(id: 'nonexistent')
-        expect(response).to have_http_status(:found)  # 或其他适当的响应
+        expect(response).to have_http_status(:found)  
       end
     end
   end
@@ -160,7 +158,7 @@ describe 'GET /profiles/new' do
   
     it 'redirects due to lack of permissions' do
       get edit_profile_path(profile)
-      expect(response).to redirect_to(root_path)  # 或其他适当的重定向路径
+      expect(response).to redirect_to(root_path)  
     end
   end
 

@@ -5,7 +5,6 @@ RSpec.describe "Profiles", type: :request do
   let(:user) { User.create!(username: 'testuser', email: 'test@example.com', password: 'password') }
 
   before do
-    # 模拟用户登录
     post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
   end
 

@@ -45,7 +45,7 @@ RSpec.describe "Users", type: :request do
     let(:user) { User.create! valid_attributes }
 
     before do
-      # 模拟用户登录
+      
       post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
     end
 
@@ -175,7 +175,6 @@ RSpec.describe "Users", type: :request do
       end
   
       it 'shows the user events' do
-        # 测试页面上显示的活动是否正确
       end
     end
   end

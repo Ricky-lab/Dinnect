@@ -17,7 +17,6 @@ RSpec.describe "Sessions", type: :request do
         expect(response).to redirect_to(user_path(user))
       end
 
-      # ... 保留其他测试用例 ...
     end
 
     context 'with invalid credentials' do
