@@ -1,4 +1,19 @@
-# Final documentation: 
+# Project: [Dinnect ](https://dinnect-71eda9ef843e.herokuapp.com/login) 
+## Group members:
+- Yuehui Ruan
+- Ruoxing Liao
+- Yifei Luo
+- Jianghao Wu
+
+
+## User Stories: [Why Dinnect?](DINNECT_README.md)
+We analyze the needs and tell you why you should believe Dinnect can be a __go-to community__ software!
+
+<br>
+
+## Minimal Viable Prototype: [Dinnect](https://dinnect-71eda9ef843e.herokuapp.com/login)(Iter-2)
+
+<br>
 
 ## Techs and Framework
 
