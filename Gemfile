@@ -14,7 +14,6 @@ end
 
 # Use SQLite for development and test environments
 group :development, :test do
-  gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner', '~> 1.8'
   gem 'capybara', '~> 3.36'

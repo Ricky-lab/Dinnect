@@ -42,19 +42,4 @@ Scenario: Create/Edit profile information
   And I should see "Dietary Preference: Vegetarian"
   And I should see "Email: alice@columbia.edu"
 
-# Scenario: Cancel editing a user profile
-    # When I am on the User page for "al1234"
-    # And I remember the profile information
-    # And I follow "Edit Profile" 
-    # Then I should be on the Edit Profile page for "al1234"
 
-    # When I fill in "First name" with "Alice"
-    # And I fill in "Last name" with "Johnson"
-    # And I fill in "Class name" with "COMSW4152"
-    # And I fill in "School" with "Columbia University"
-    # And I fill in "Major" with "Computer Science"
-    # And I fill in "Dietary preference" with "Vegetarian"
-
-    # When I follow "Back to Profiles"
-    # Then I should be on the User page for "al1234"
-    # And the profile information should be unchanged

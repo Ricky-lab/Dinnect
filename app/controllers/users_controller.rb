@@ -30,10 +30,7 @@ class UsersController < ApplicationController
     # end
     # auth_user
 
-    if @user.nil?
-      flash[:danger] = "User not found. Please log in."
-      redirect_to login_path
-    else
+    if !@user.nil?
       auth_user
     end
   end

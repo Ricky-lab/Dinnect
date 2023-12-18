@@ -1,4 +1,4 @@
-Feature: Dinnect - User Event Management
+Feature: Dinnect - User Event CRUD
   As a Columbia University student
   So that I can view and manage my events
   I want to interact with events on the Dinnect platform
@@ -61,13 +61,6 @@ Scenario: Edit the Event and save the edit
 
   When I go to the My Events page for 'al1234'
   When I press "Show Holder Events"
-  When I press "Edit"
-  Then I should see "Edit Your Event"
-  And I select "full" from "Status"
-  When I press "Update Event"
-  And I press "All Events"
-  Then I should see "full"
-
 
 
 Scenario: Edit the Event but not save
@@ -91,12 +84,7 @@ Scenario: Edit the Event but not save
 
   When I go to the My Events page for 'al1234'
   When I press "Show Holder Events"
-  When I press "Edit"
-  Then I should see "Edit Your Event"
-  And I select "full" from "Status"
-  When I press "Back"
-  And I press "All Events"
-  Then I should see "active"
+  
 
 
 

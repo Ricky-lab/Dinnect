@@ -1,4 +1,4 @@
-Feature: Dinnect - User Event Management
+Feature: Dinnect - User Event Navigation
   As a Columbia University student
   So that I can view and manage my events
   I want to interact with events on the Dinnect platform
@@ -44,4 +44,10 @@ Scenario: Navigating to All Events from My Events
   When I follow "All Events"
   Then I should be on the All Events page
   And I should see "All Events"
+
+  Scenario: Navigating to Another User's Events page
+  When I go to the My Events page for 'bo1234'
+  Then I should be on the User page for "al1234"
+  And I should see "You are not authorized to access this information."
+
 
