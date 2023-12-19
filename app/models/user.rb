@@ -11,7 +11,6 @@ class User < ApplicationRecord
 
   # after sign up, this will automatically creata a new record in profile
   after_create :build_default_profile
-  after_update :sync_profile_email
 
   def joined_event?(event)
     user_events.exists?(event: event, role: "participator")
@@ -25,7 +24,5 @@ class User < ApplicationRecord
     build_profile(email: self.email).save
   end
 
-  def sync_profile_email
-    profile.update!(email: email) if profile.present?
-  end
+
 end

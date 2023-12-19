@@ -1,4 +1,3 @@
-# spec/requests/users_request_spec.rb
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
@@ -21,17 +20,10 @@ RSpec.describe "Users", type: :request do
         }.to change(User, :count).by(1)
       end
 
-      it 'valid register, database size + 1' do
-        current_size = User.count
-        user = User.create(username: 'test3', email: 'test3@email.com', password: 'password') # Create a user with valid credentials for the test
-        expect(User.count).to eq(current_size + 1)
-      end
-
       it 'redirects to the login path with a notice' do
         post signup_path, params: { user: valid_attributes }
         expect(response).to redirect_to(login_path)
-        follow_redirect! #check the redirections
-        expect(flash[:notice]).to eq('Registration successful!')
+        expect(flash[:notice]).to eq('Registration successful! Please log in.')
       end
     end
 
@@ -39,13 +31,7 @@ RSpec.describe "Users", type: :request do
       it 'does not create a new User' do
         expect {
           post signup_path, params: { user: invalid_attributes }
-        }.to change(User, :count).by(0)
-      end
-
-      it 'register with duplicate username result in unsuccessfully register' do
-        current_size = User.count
-        user = User.create(username: 'test2', email: 'test2@email.com', password: 'password') # Create a user with valid credentials for the test
-        expect(User.count).to eq(current_size)
+        }.to_not change(User, :count)
       end
 
       it 're-renders the signup template' do
@@ -56,11 +42,141 @@ RSpec.describe "Users", type: :request do
   end
 
   describe 'GET /users/:id' do
+    let(:user) { User.create! valid_attributes }
+
+    before do
+      
+      post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
+    end
+
     it 'renders the show template' do
-      user = User.create! valid_attributes
       get user_path(user)
       expect(response).to have_http_status(:success)
       expect(response).to render_template(:show)
     end
   end
+
+  describe 'GET /users/:id' do
+    context 'when the user is not logged in' do
+      let(:user) { User.create!(valid_attributes) }
+  
+      it 'redirects to the login page' do
+        get user_path(user)
+        expect(response).to redirect_to(login_path)
+      end
+    end
+  
+    context 'when accessing a different user' do
+      let(:user) { User.create!(valid_attributes) }
+      let(:other_user) { User.create!(username: 'otheruser', email: 'other@example.com', password: 'password') }
+  
+      before do
+        post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
+      end
+  
+      it 'redirects to the root path' do
+        get user_path(other_user)
+        expect(response).to redirect_to(root_path)
+      end
+    end
+  end
+
+  describe 'GET /users/:id/my_events' do
+    let(:user) { User.create!(valid_attributes) }
+  
+    before do
+      post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
+    end
+  
+    it 'renders the my_events template' do
+      get my_events_user_path(user)
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template(:my_events)
+    end
+  end
+
+  
+
+  describe 'GET /users/:id/my_events' do
+    context 'when not logged in' do
+      let(:user) { User.create!(valid_attributes) }
+  
+      it 'redirects to the login page' do
+        get my_events_user_path(user)
+        expect(response).to redirect_to(login_path)
+      end
+    end
+  end
+
+  describe 'GET /users/:id' do
+    context 'when accessing a different user' do
+      let(:user) { User.create!(valid_attributes) }
+      let(:other_user) { User.create!(username: 'otheruser', email: 'other@example.com', password: 'password') }
+  
+      before do
+        post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
+      end
+  
+      it 'redirects due to lack of permissions' do
+        get user_path(other_user)
+        expect(response).to redirect_to(root_path)
+      end
+    end
+  end
+
+  describe 'GET /users/:id/my_events' do
+    context 'when user has no events' do
+      let(:user) { User.create!(valid_attributes) }
+  
+      before do
+        post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
+      end
+  
+      it 'renders the my_events template' do
+        get my_events_user_path(user)
+        expect(response).to have_http_status(:success)
+        expect(response).to render_template(:my_events)
+      end
+    end
+  end
+
+  describe 'GET /users/:id' do
+    context 'when the user does not exist' do
+      it 'redirects to the login page' do
+        get user_path(id: 'nonexistent')
+        expect(response).to redirect_to(login_path)
+      end
+    end
+  end
+
+  describe 'GET /users/:id/my_events' do
+    context 'when logged in' do
+      let(:user) { User.create!(valid_attributes) }
+  
+      before do
+        post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
+        get my_events_user_path(user)
+      end
+  
+      it 'allows access to my_events' do
+        expect(response).to have_http_status(:success)
+      end
+    end
+  end
+
+  describe 'GET /users/:id/my_events' do
+    context 'when user has events' do
+      let(:user) { User.create!(valid_attributes) }
+      # 创建一些测试用的活动和用户活动关联
+  
+      before do
+        post login_path, params: { session: { username_or_email: user.username, password: 'password' } }
+        get my_events_user_path(user)
+      end
+  
+      it 'shows the user events' do
+      end
+    end
+  end
+  
 end

@@ -6,19 +6,14 @@ Feature: Dinnect - User Profile Management
 Background: Existing Users
   Given the following users exist:
     | email             | username | password     |
-    | alice@columbia.edu| al1234   | Vegetarian   |
-    | bob@columbia.edu  | bo1234   | Gluten-Free  |
-  When I go to the Registration page
-  And I fill in "Username" with "al1234"
-  And I fill in "Email" with "alice@columbia.edu"
-  And I fill in "Password" with "Vegetarian"
-  And I press "Sign Up"
+    | alice@columbia.edu| al1234   | 123123   |
+    | bob@columbia.edu  | bo1234   | 123123  |
   Given I am on the Log in page
-  And I fill in "Username or email" with "al1234"
-  And I fill in "Password" with "Vegetarian"
-  And I press "Log In"
+  And I fill in "Username or Email Address" with "al1234"
+  And I fill in "Password" with "123123"
+  And I press "Login"
   Then I should be on the User page for "al1234"
-  Then I should see "Welcome, al1234!"
+  Then I should see "User Profile"
 
 Scenario: Viewing own profile
   When I go to the User page for "al1234"
@@ -26,19 +21,18 @@ Scenario: Viewing own profile
   And I should see "Email: alice@columbia.edu"
 
 Scenario: Create/Edit profile information
-
-
   When I go to the User page for "al1234"
   And I follow "Edit Profile"
-  Then I should be on the Profile page
-  And I fill in "First name" with "Alice"
+  Then I should be on the Edit Profile page for "al1234"
+
+  When I fill in "First name" with "Alice"
   And I fill in "Last name" with "Johnson"
   And I fill in "Class name" with "COMSW4152"
   And I fill in "School" with "Columbia University"
   And I fill in "Major" with "Computer Science"
   And I fill in "Dietary preference" with "Vegetarian"
 
-  And I press "Create Profile"
+  And I press "Update Profile"
   Then I should be on the User page for "al1234"
   Then I should see "First Name: Alice"
   Then I should see "Last Name: Johnson"
@@ -47,3 +41,5 @@ Scenario: Create/Edit profile information
   And I should see "Major: Computer Science"
   And I should see "Dietary Preference: Vegetarian"
   And I should see "Email: alice@columbia.edu"
+
+

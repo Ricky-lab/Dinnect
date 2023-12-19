@@ -65,6 +65,8 @@ When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
   fill_in(field, :with => value)
 end
 
+
+
 # Use this to fill in an entire form with data from a table. Example:
 #
 #   When I fill in the following:
@@ -97,6 +99,25 @@ end
 When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
+
+When('I click {string}') do |button_text|
+  click_button(button_text)
+end
+
+
+Then('I should see the {string} in the holder events section') do |event_title|
+  # Click the button to show holder events, if not already clicked in a previous step
+  find('#holdersButton').click
+
+  # Wait for the JavaScript to execute and for the holder events section to be visible
+  expect(page).to have_css('#holder-events', visible: true, wait: 500)
+
+  # Use an explicit wait here to ensure that the dynamically loaded content has time to appear
+  within('#holder-events', visible: true) do
+    expect(page).to have_content(event_title), "Expected to find text '#{event_title}' in the holder events section, but did not."
+  end
+end
+
 
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
@@ -230,7 +251,7 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
     end
   end
 end
- 
+
 Then /^(?:|I )should be on (.+)$/ do |page_name|
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should
@@ -244,8 +265,8 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query
   actual_params = query ? CGI.parse(query) : {}
   expected_params = {}
-  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')} 
-  
+  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')}
+
   if actual_params.respond_to? :should
     actual_params.should == expected_params
   else

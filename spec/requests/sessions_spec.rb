@@ -26,6 +26,13 @@ RSpec.describe "Sessions", type: :request do
         expect(response).to render_template(:new)
       end
     end
+
+    context 'with valid credentials' do
+      it 'logs in the user' do
+        post "/login", params: { session: { username_or_email: user.username, password: 'password' } }
+        expect(session[:user_id]).to eq(user.id)
+        expect(response).to redirect_to(user_path(user))
+      end
   end
 
   describe "DELETE /logout" do
@@ -39,4 +46,5 @@ RSpec.describe "Sessions", type: :request do
       expect(response).to redirect_to(root_url)
     end
   end
+end
 end

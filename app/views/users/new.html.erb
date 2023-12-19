@@ -50,7 +50,7 @@
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="card">
             <div class="card-body py-5 px-md-5">
-              <%= form_for @user, url: users_path, method: :post, html: { class: 'form' } do |f| %>
+            <%= form_for @user, url: ( @user.new_record? ? signup_path : users_path ), method: :post, html: { class: 'form' } do |f| %>
                 
                 <!-- Username input -->
                 <div class="form-outline mb-4">

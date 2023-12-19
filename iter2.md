@@ -57,7 +57,7 @@ Then go to `localhost:4001`.
   bundle exec rake cucumber
   ```
 
-+ Pass cucumber and rspec with good coverage: 174 / 182 LOC (95.6%) 
++ Pass Cucumber with good coverage: 101 / 105 LOC (96.19%)
 
 + Design
   + Registration: 
@@ -74,10 +74,6 @@ Then go to `localhost:4001`.
     + View All Events page
     + View My Events page
     + Transfer freely among All Events, My Events and Profile pages
-    + Create/Read/Edit/Delete event
-    + Join and quit event
-    + Manage the members of event
-  
 
 ## Testing: RSpec
 
@@ -88,7 +84,9 @@ Then go to `localhost:4001`.
   ```
 
 + All files are in `'./spec'`
-+ Pass cucumber with good coverage: 174 / 182 LOC (95.6%) 
+
++ Pass RSpec with good coverage: 101 / 105 LOC (96.19%)
+
 + Design
   + Align with the Model-View-Controller (MVC) pattern
   + Model Tests: Assess key functionalities of the Event, Profile, UserEvent, and User models, including validations of essential attributes, the integrity of model associations, the functionality of enums and callbacks, and the enforcement of uniqueness constraints.
@@ -133,24 +131,21 @@ Then go to `localhost:4001`.
 - <del>RSpec</del>
 
 
-### Sprint 2: Oct 27, 2023
+### Sprint 2: Nov 15, 2023
 #### Front:
-+ <del>profile</del>
-+ <del>event</del>
+
+1. <del>Profile</del>
+2. <del>Create Profile Page</del>
+3. <del>Event Pages (All and Personal)</del>
+
 #### Back: 
-1. <del>Populating db</del>
-2. <del>db deployment</del>
-3. <del>MVC testing</del>
+1. <del>Create main db</del>
+1. <del>MVC for Profile</del>
+1. <del>MVC for Events</del>
 
 #### User story
 
 + <del>Cucumber</del>
 
 #### Test unit setting
-- <del>RSpec</del>
-
-### Sprint 3: 
-+ <del>event</del>
-+ <del>map</del>
-+ <del>Cucumber</del>
 - <del>RSpec</del>
